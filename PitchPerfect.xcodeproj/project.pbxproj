@@ -7,6 +7,7 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
+		E299702B1BD6AFF400F679B1 /* PlaySoundsViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = E299702A1BD6AFF400F679B1 /* PlaySoundsViewController.swift */; settings = {ASSET_TAGS = (); }; };
 		E2E50FDA1BD6289800FDCD31 /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = E2E50FD91BD6289800FDCD31 /* AppDelegate.swift */; };
 		E2E50FDC1BD6289800FDCD31 /* RecordSoundsViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = E2E50FDB1BD6289800FDCD31 /* RecordSoundsViewController.swift */; };
 		E2E50FDF1BD6289800FDCD31 /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = E2E50FDD1BD6289800FDCD31 /* Main.storyboard */; };
@@ -17,6 +18,7 @@
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
+		E299702A1BD6AFF400F679B1 /* PlaySoundsViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = PlaySoundsViewController.swift; sourceTree = "<group>"; };
 		E2E50FD61BD6289800FDCD31 /* PitchPerfect.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = PitchPerfect.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		E2E50FD91BD6289800FDCD31 /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
 		E2E50FDB1BD6289800FDCD31 /* RecordSoundsViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = RecordSoundsViewController.swift; sourceTree = "<group>"; };
@@ -65,6 +67,7 @@
 				E2E50FE01BD6289800FDCD31 /* Assets.xcassets */,
 				E2E50FE21BD6289800FDCD31 /* LaunchScreen.storyboard */,
 				E2E50FE51BD6289800FDCD31 /* Info.plist */,
+				E299702A1BD6AFF400F679B1 /* PlaySoundsViewController.swift */,
 			);
 			path = PitchPerfect;
 			sourceTree = "<group>";
@@ -151,6 +154,7 @@
 			buildActionMask = 2147483647;
 			files = (
 				E2E50FDC1BD6289800FDCD31 /* RecordSoundsViewController.swift in Sources */,
+				E299702B1BD6AFF400F679B1 /* PlaySoundsViewController.swift in Sources */,
 				E2E50FDA1BD6289800FDCD31 /* AppDelegate.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
@@ -299,6 +303,7 @@
 				E2E50FEA1BD6289800FDCD31 /* Release */,
 			);
 			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
 		};
 /* End XCConfigurationList section */
 	};
