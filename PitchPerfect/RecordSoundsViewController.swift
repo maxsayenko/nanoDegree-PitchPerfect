@@ -29,7 +29,10 @@ class RecordSoundsViewController: UIViewController {
     }
     
     @IBAction func stopButtonTouch(sender: UIButton) {
-    
+        let playSoundsViewController = self.storyboard?.instantiateViewControllerWithIdentifier("playSoundsView") as! PlaySoundsViewController
+        
+        self.navigationController?.pushViewController(playSoundsViewController, animated: true)
+        
     }
     
     override func viewDidLoad() {

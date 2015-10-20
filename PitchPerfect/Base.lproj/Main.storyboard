@@ -8,7 +8,7 @@
         <scene sceneID="Wwc-82-V2k">
             <objects>
                 <navigationController id="4DW-Bj-Zvk" sceneMemberID="viewController">
-                    <navigationBar key="navigationBar" contentMode="scaleToFill" backIndicatorImage="microphone2x-iphone.png" id="DcC-d6-YVF">
+                    <navigationBar key="navigationBar" contentMode="scaleToFill" id="DcC-d6-YVF">
                         <rect key="frame" x="0.0" y="0.0" width="320" height="44"/>
                         <autoresizingMask key="autoresizingMask"/>
                     </navigationBar>
