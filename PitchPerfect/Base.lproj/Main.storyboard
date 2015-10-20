@@ -1,9 +1,25 @@
 <?xml version="1.0" encoding="UTF-8" standalone="no"?>
-<document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="8191" systemVersion="14F27" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" initialViewController="BYZ-38-t0r">
+<document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="8191" systemVersion="14F27" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" initialViewController="4DW-Bj-Zvk">
     <dependencies>
         <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="8154"/>
     </dependencies>
     <scenes>
+        <!--Navigation Controller-->
+        <scene sceneID="Wwc-82-V2k">
+            <objects>
+                <navigationController id="4DW-Bj-Zvk" sceneMemberID="viewController">
+                    <navigationBar key="navigationBar" contentMode="scaleToFill" backIndicatorImage="microphone2x-iphone.png" id="DcC-d6-YVF">
+                        <rect key="frame" x="0.0" y="0.0" width="320" height="44"/>
+                        <autoresizingMask key="autoresizingMask"/>
+                    </navigationBar>
+                    <connections>
+                        <segue destination="BYZ-38-t0r" kind="relationship" relationship="rootViewController" id="GRV-Oq-tjO"/>
+                    </connections>
+                </navigationController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="UQv-29-iGS" userLabel="First Responder" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="-279" y="366"/>
+        </scene>
         <!--Record Sounds View Controller-->
         <scene sceneID="tne-QT-ifu">
             <objects>
@@ -55,6 +71,7 @@
                             <constraint firstItem="cLH-dM-BXl" firstAttribute="top" secondItem="lPb-3l-u6v" secondAttribute="bottom" constant="8" symbolic="YES" id="uBc-Sv-7CB"/>
                         </constraints>
                     </view>
+                    <navigationItem key="navigationItem" id="ktR-F6-3eD"/>
                     <connections>
                         <outlet property="recordLabel" destination="cLH-dM-BXl" id="SvY-Wp-Ffx"/>
                         <outlet property="stopButton" destination="Q1o-Sb-0Ud" id="MHw-IZ-aLZ"/>
