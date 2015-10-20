@@ -10,4 +10,10 @@ import UIKit
 
 class PlaySoundsViewController: UIViewController {
 
+    override func viewDidLoad() {
+        self.navigationController?.navigationBarHidden = false
+        super.viewDidLoad()
+        // Do any additional setup after loading the view, typically from a nib.
+    }
+    
 }

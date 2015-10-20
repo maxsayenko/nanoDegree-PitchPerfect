@@ -30,13 +30,16 @@ class RecordSoundsViewController: UIViewController {
     
     @IBAction func stopButtonTouch(sender: UIButton) {
         let playSoundsViewController = self.storyboard?.instantiateViewControllerWithIdentifier("playSoundsView") as! PlaySoundsViewController
-        
         self.navigationController?.pushViewController(playSoundsViewController, animated: true)
         
     }
     
-    override func viewDidLoad() {
+    override func viewWillAppear(animated: Bool) {
         self.navigationController?.navigationBarHidden = true
+        super.viewWillAppear(animated)
+    }
+    
+    override func viewDidLoad() {
         super.viewDidLoad()
         // Do any additional setup after loading the view, typically from a nib.
     }

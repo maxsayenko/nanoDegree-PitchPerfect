@@ -71,7 +71,9 @@
                             <constraint firstItem="cLH-dM-BXl" firstAttribute="top" secondItem="lPb-3l-u6v" secondAttribute="bottom" constant="8" symbolic="YES" id="uBc-Sv-7CB"/>
                         </constraints>
                     </view>
-                    <navigationItem key="navigationItem" id="ktR-F6-3eD"/>
+                    <navigationItem key="navigationItem" id="ktR-F6-3eD">
+                        <barButtonItem key="backBarButtonItem" title="Record" id="MQn-C1-1qC"/>
+                    </navigationItem>
                     <connections>
                         <outlet property="recordLabel" destination="cLH-dM-BXl" id="SvY-Wp-Ffx"/>
                         <outlet property="stopButton" destination="Q1o-Sb-0Ud" id="MHw-IZ-aLZ"/>
