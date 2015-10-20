@@ -16,6 +16,12 @@
                         <rect key="frame" x="0.0" y="0.0" width="320" height="568"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <subviews>
+                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Record!" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="cLH-dM-BXl">
+                                <rect key="frame" x="131" y="327" width="60" height="21"/>
+                                <fontDescription key="fontDescription" type="system" pointSize="17"/>
+                                <color key="textColor" cocoaTouchSystemColor="darkTextColor"/>
+                                <nil key="highlightedColor"/>
+                            </label>
                             <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="lPb-3l-u6v">
                                 <rect key="frame" x="125" y="249" width="70" height="70"/>
                                 <constraints>
@@ -27,16 +33,20 @@
                                     <action selector="recordButtonTouch:" destination="BYZ-38-t0r" eventType="touchUpInside" id="I8G-QQ-8w5"/>
                                 </connections>
                             </button>
-                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Record!" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="cLH-dM-BXl">
-                                <rect key="frame" x="131" y="327" width="59.5" height="20.5"/>
-                                <fontDescription key="fontDescription" type="system" pointSize="17"/>
-                                <color key="textColor" cocoaTouchSystemColor="darkTextColor"/>
-                                <nil key="highlightedColor"/>
-                            </label>
+                            <button hidden="YES" opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="Q1o-Sb-0Ud">
+                                <rect key="frame" x="145" y="355" width="30" height="30"/>
+                                <constraints>
+                                    <constraint firstAttribute="height" constant="30" id="YNH-TB-hvZ"/>
+                                    <constraint firstAttribute="width" constant="30" id="eIu-da-Xma"/>
+                                </constraints>
+                                <state key="normal" backgroundImage="stop2x-iphone.png"/>
+                            </button>
                         </subviews>
                         <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="calibratedWhite"/>
                         <constraints>
+                            <constraint firstItem="Q1o-Sb-0Ud" firstAttribute="centerX" secondItem="lPb-3l-u6v" secondAttribute="centerX" id="Ffr-uZ-WfE"/>
                             <constraint firstItem="lPb-3l-u6v" firstAttribute="centerX" secondItem="8bC-Xf-vdC" secondAttribute="centerX" id="JcQ-DY-Tbd"/>
+                            <constraint firstItem="Q1o-Sb-0Ud" firstAttribute="top" secondItem="cLH-dM-BXl" secondAttribute="bottom" constant="7" id="aXv-v6-Orz"/>
                             <constraint firstItem="lPb-3l-u6v" firstAttribute="centerX" secondItem="cLH-dM-BXl" secondAttribute="centerX" id="esa-J5-WOD"/>
                             <constraint firstItem="lPb-3l-u6v" firstAttribute="centerY" secondItem="8bC-Xf-vdC" secondAttribute="centerY" id="lur-QG-Kgl"/>
                             <constraint firstItem="cLH-dM-BXl" firstAttribute="top" secondItem="lPb-3l-u6v" secondAttribute="bottom" constant="8" symbolic="YES" id="uBc-Sv-7CB"/>
@@ -44,6 +54,7 @@
                     </view>
                     <connections>
                         <outlet property="recordLabel" destination="cLH-dM-BXl" id="SvY-Wp-Ffx"/>
+                        <outlet property="stopButton" destination="Q1o-Sb-0Ud" id="MHw-IZ-aLZ"/>
                     </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="dkx-z0-nzr" sceneMemberID="firstResponder"/>
@@ -53,5 +64,6 @@
     </scenes>
     <resources>
         <image name="microphone2x-iphone.png" width="200" height="200"/>
+        <image name="stop2x-iphone.png" width="100" height="100"/>
     </resources>
 </document>

@@ -13,21 +13,20 @@ class RecordSoundsViewController: UIViewController {
     var isRecording: Bool = false
     let textRecording = "Recording!"
     let textRecord = "Record!"
+    let textResume = "Resume!"
     
     @IBOutlet var recordLabel: UILabel!
+    @IBOutlet var stopButton: UIButton!
     
     @IBAction func recordButtonTouch(sender: UIButton) {
         if(isRecording) {
-            recordLabel.text = textRecord
+            recordLabel.text = textResume
         } else {
             recordLabel.text = textRecording
+            stopButton.hidden = false
         }
-        print(isRecording)
         isRecording = !isRecording
     }
-    
-    
-    
     
     override func viewDidLoad() {
         super.viewDidLoad()
