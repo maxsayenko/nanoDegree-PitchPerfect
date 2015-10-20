@@ -8,20 +8,24 @@
 
 /* Begin PBXBuildFile section */
 		E2E50FDA1BD6289800FDCD31 /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = E2E50FD91BD6289800FDCD31 /* AppDelegate.swift */; };
-		E2E50FDC1BD6289800FDCD31 /* ViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = E2E50FDB1BD6289800FDCD31 /* ViewController.swift */; };
+		E2E50FDC1BD6289800FDCD31 /* RecordSoundsViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = E2E50FDB1BD6289800FDCD31 /* RecordSoundsViewController.swift */; };
 		E2E50FDF1BD6289800FDCD31 /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = E2E50FDD1BD6289800FDCD31 /* Main.storyboard */; };
 		E2E50FE11BD6289800FDCD31 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = E2E50FE01BD6289800FDCD31 /* Assets.xcassets */; };
 		E2E50FE41BD6289800FDCD31 /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = E2E50FE21BD6289800FDCD31 /* LaunchScreen.storyboard */; };
+		E2E50FEE1BD62AE500FDCD31 /* microphone2x-iphone.png in Resources */ = {isa = PBXBuildFile; fileRef = E2E50FEC1BD62AE500FDCD31 /* microphone2x-iphone.png */; settings = {ASSET_TAGS = (); }; };
+		E2E50FEF1BD62AE500FDCD31 /* stop2x-iphone.png in Resources */ = {isa = PBXBuildFile; fileRef = E2E50FED1BD62AE500FDCD31 /* stop2x-iphone.png */; settings = {ASSET_TAGS = (); }; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
 		E2E50FD61BD6289800FDCD31 /* PitchPerfect.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = PitchPerfect.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		E2E50FD91BD6289800FDCD31 /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
-		E2E50FDB1BD6289800FDCD31 /* ViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ViewController.swift; sourceTree = "<group>"; };
+		E2E50FDB1BD6289800FDCD31 /* RecordSoundsViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = RecordSoundsViewController.swift; sourceTree = "<group>"; };
 		E2E50FDE1BD6289800FDCD31 /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/Main.storyboard; sourceTree = "<group>"; };
 		E2E50FE01BD6289800FDCD31 /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
 		E2E50FE31BD6289800FDCD31 /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/LaunchScreen.storyboard; sourceTree = "<group>"; };
 		E2E50FE51BD6289800FDCD31 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
+		E2E50FEC1BD62AE500FDCD31 /* microphone2x-iphone.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "microphone2x-iphone.png"; sourceTree = "<group>"; };
+		E2E50FED1BD62AE500FDCD31 /* stop2x-iphone.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "stop2x-iphone.png"; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -54,14 +58,24 @@
 		E2E50FD81BD6289800FDCD31 /* PitchPerfect */ = {
 			isa = PBXGroup;
 			children = (
+				E2E50FEB1BD62AC700FDCD31 /* images */,
 				E2E50FD91BD6289800FDCD31 /* AppDelegate.swift */,
-				E2E50FDB1BD6289800FDCD31 /* ViewController.swift */,
+				E2E50FDB1BD6289800FDCD31 /* RecordSoundsViewController.swift */,
 				E2E50FDD1BD6289800FDCD31 /* Main.storyboard */,
 				E2E50FE01BD6289800FDCD31 /* Assets.xcassets */,
 				E2E50FE21BD6289800FDCD31 /* LaunchScreen.storyboard */,
 				E2E50FE51BD6289800FDCD31 /* Info.plist */,
 			);
 			path = PitchPerfect;
+			sourceTree = "<group>";
+		};
+		E2E50FEB1BD62AC700FDCD31 /* images */ = {
+			isa = PBXGroup;
+			children = (
+				E2E50FEC1BD62AE500FDCD31 /* microphone2x-iphone.png */,
+				E2E50FED1BD62AE500FDCD31 /* stop2x-iphone.png */,
+			);
+			name = images;
 			sourceTree = "<group>";
 		};
 /* End PBXGroup section */
@@ -121,7 +135,9 @@
 			isa = PBXResourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				E2E50FEE1BD62AE500FDCD31 /* microphone2x-iphone.png in Resources */,
 				E2E50FE41BD6289800FDCD31 /* LaunchScreen.storyboard in Resources */,
+				E2E50FEF1BD62AE500FDCD31 /* stop2x-iphone.png in Resources */,
 				E2E50FE11BD6289800FDCD31 /* Assets.xcassets in Resources */,
 				E2E50FDF1BD6289800FDCD31 /* Main.storyboard in Resources */,
 			);
@@ -134,7 +150,7 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				E2E50FDC1BD6289800FDCD31 /* ViewController.swift in Sources */,
+				E2E50FDC1BD6289800FDCD31 /* RecordSoundsViewController.swift in Sources */,
 				E2E50FDA1BD6289800FDCD31 /* AppDelegate.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
