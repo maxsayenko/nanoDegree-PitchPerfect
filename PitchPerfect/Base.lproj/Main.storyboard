@@ -23,6 +23,9 @@
                                     <constraint firstAttribute="width" constant="70" id="ODn-IE-bNZ"/>
                                 </constraints>
                                 <state key="normal" backgroundImage="microphone2x-iphone.png"/>
+                                <connections>
+                                    <action selector="recordButtonTouch:" destination="BYZ-38-t0r" eventType="touchUpInside" id="I8G-QQ-8w5"/>
+                                </connections>
                             </button>
                             <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Record!" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="cLH-dM-BXl">
                                 <rect key="frame" x="131" y="327" width="59.5" height="20.5"/>
@@ -39,6 +42,9 @@
                             <constraint firstItem="cLH-dM-BXl" firstAttribute="top" secondItem="lPb-3l-u6v" secondAttribute="bottom" constant="8" symbolic="YES" id="uBc-Sv-7CB"/>
                         </constraints>
                     </view>
+                    <connections>
+                        <outlet property="recordLabel" destination="cLH-dM-BXl" id="SvY-Wp-Ffx"/>
+                    </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="dkx-z0-nzr" sceneMemberID="firstResponder"/>
             </objects>
