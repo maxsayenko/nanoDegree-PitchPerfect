@@ -21,6 +21,7 @@
 		E2FB03DE1BD75D0B00B281A5 /* fast2x-iphone.png in Resources */ = {isa = PBXBuildFile; fileRef = E2FB03D81BD75D0B00B281A5 /* fast2x-iphone.png */; settings = {ASSET_TAGS = (); }; };
 		E2FB03DF1BD75D0B00B281A5 /* reverb.png in Resources */ = {isa = PBXBuildFile; fileRef = E2FB03D91BD75D0B00B281A5 /* reverb.png */; settings = {ASSET_TAGS = (); }; };
 		E2FB03E01BD75D0B00B281A5 /* slow2x-iphone.png in Resources */ = {isa = PBXBuildFile; fileRef = E2FB03DA1BD75D0B00B281A5 /* slow2x-iphone.png */; settings = {ASSET_TAGS = (); }; };
+		E2FB03E21BD7782400B281A5 /* AudioHelper.swift in Sources */ = {isa = PBXBuildFile; fileRef = E2FB03E11BD7782400B281A5 /* AudioHelper.swift */; settings = {ASSET_TAGS = (); }; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
@@ -40,6 +41,7 @@
 		E2FB03D81BD75D0B00B281A5 /* fast2x-iphone.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "fast2x-iphone.png"; sourceTree = "<group>"; };
 		E2FB03D91BD75D0B00B281A5 /* reverb.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = reverb.png; sourceTree = "<group>"; };
 		E2FB03DA1BD75D0B00B281A5 /* slow2x-iphone.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "slow2x-iphone.png"; sourceTree = "<group>"; };
+		E2FB03E11BD7782400B281A5 /* AudioHelper.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = AudioHelper.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -80,6 +82,7 @@
 				E2E50FE21BD6289800FDCD31 /* LaunchScreen.storyboard */,
 				E2E50FE51BD6289800FDCD31 /* Info.plist */,
 				E299702A1BD6AFF400F679B1 /* PlaySoundsViewController.swift */,
+				E2FB03E11BD7782400B281A5 /* AudioHelper.swift */,
 			);
 			path = PitchPerfect;
 			sourceTree = "<group>";
@@ -179,6 +182,7 @@
 			files = (
 				E2E50FDC1BD6289800FDCD31 /* RecordSoundsViewController.swift in Sources */,
 				E299702B1BD6AFF400F679B1 /* PlaySoundsViewController.swift in Sources */,
+				E2FB03E21BD7782400B281A5 /* AudioHelper.swift in Sources */,
 				E2E50FDA1BD6289800FDCD31 /* AppDelegate.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
