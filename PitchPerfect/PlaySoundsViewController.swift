@@ -10,6 +10,11 @@ import UIKit
 
 class PlaySoundsViewController: UIViewController {
 
+    
+    @IBAction func snailButtonTouch(sender: UIButton) {
+    }
+    
+    
     override func viewDidLoad() {
         self.navigationController?.navigationBarHidden = false
         super.viewDidLoad()

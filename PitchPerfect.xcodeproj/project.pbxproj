@@ -15,6 +15,12 @@
 		E2E50FE41BD6289800FDCD31 /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = E2E50FE21BD6289800FDCD31 /* LaunchScreen.storyboard */; };
 		E2E50FEE1BD62AE500FDCD31 /* microphone2x-iphone.png in Resources */ = {isa = PBXBuildFile; fileRef = E2E50FEC1BD62AE500FDCD31 /* microphone2x-iphone.png */; settings = {ASSET_TAGS = (); }; };
 		E2E50FEF1BD62AE500FDCD31 /* stop2x-iphone.png in Resources */ = {isa = PBXBuildFile; fileRef = E2E50FED1BD62AE500FDCD31 /* stop2x-iphone.png */; settings = {ASSET_TAGS = (); }; };
+		E2FB03DB1BD75D0B00B281A5 /* chipmunk2x-iphone.png in Resources */ = {isa = PBXBuildFile; fileRef = E2FB03D51BD75D0B00B281A5 /* chipmunk2x-iphone.png */; settings = {ASSET_TAGS = (); }; };
+		E2FB03DC1BD75D0B00B281A5 /* darthvader2x-iphone.png in Resources */ = {isa = PBXBuildFile; fileRef = E2FB03D61BD75D0B00B281A5 /* darthvader2x-iphone.png */; settings = {ASSET_TAGS = (); }; };
+		E2FB03DD1BD75D0B00B281A5 /* echo.png in Resources */ = {isa = PBXBuildFile; fileRef = E2FB03D71BD75D0B00B281A5 /* echo.png */; settings = {ASSET_TAGS = (); }; };
+		E2FB03DE1BD75D0B00B281A5 /* fast2x-iphone.png in Resources */ = {isa = PBXBuildFile; fileRef = E2FB03D81BD75D0B00B281A5 /* fast2x-iphone.png */; settings = {ASSET_TAGS = (); }; };
+		E2FB03DF1BD75D0B00B281A5 /* reverb.png in Resources */ = {isa = PBXBuildFile; fileRef = E2FB03D91BD75D0B00B281A5 /* reverb.png */; settings = {ASSET_TAGS = (); }; };
+		E2FB03E01BD75D0B00B281A5 /* slow2x-iphone.png in Resources */ = {isa = PBXBuildFile; fileRef = E2FB03DA1BD75D0B00B281A5 /* slow2x-iphone.png */; settings = {ASSET_TAGS = (); }; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
@@ -28,6 +34,12 @@
 		E2E50FE51BD6289800FDCD31 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
 		E2E50FEC1BD62AE500FDCD31 /* microphone2x-iphone.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "microphone2x-iphone.png"; sourceTree = "<group>"; };
 		E2E50FED1BD62AE500FDCD31 /* stop2x-iphone.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "stop2x-iphone.png"; sourceTree = "<group>"; };
+		E2FB03D51BD75D0B00B281A5 /* chipmunk2x-iphone.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "chipmunk2x-iphone.png"; sourceTree = "<group>"; };
+		E2FB03D61BD75D0B00B281A5 /* darthvader2x-iphone.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "darthvader2x-iphone.png"; sourceTree = "<group>"; };
+		E2FB03D71BD75D0B00B281A5 /* echo.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = echo.png; sourceTree = "<group>"; };
+		E2FB03D81BD75D0B00B281A5 /* fast2x-iphone.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "fast2x-iphone.png"; sourceTree = "<group>"; };
+		E2FB03D91BD75D0B00B281A5 /* reverb.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = reverb.png; sourceTree = "<group>"; };
+		E2FB03DA1BD75D0B00B281A5 /* slow2x-iphone.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "slow2x-iphone.png"; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -75,6 +87,12 @@
 		E2E50FEB1BD62AC700FDCD31 /* images */ = {
 			isa = PBXGroup;
 			children = (
+				E2FB03D51BD75D0B00B281A5 /* chipmunk2x-iphone.png */,
+				E2FB03D61BD75D0B00B281A5 /* darthvader2x-iphone.png */,
+				E2FB03D71BD75D0B00B281A5 /* echo.png */,
+				E2FB03D81BD75D0B00B281A5 /* fast2x-iphone.png */,
+				E2FB03D91BD75D0B00B281A5 /* reverb.png */,
+				E2FB03DA1BD75D0B00B281A5 /* slow2x-iphone.png */,
 				E2E50FEC1BD62AE500FDCD31 /* microphone2x-iphone.png */,
 				E2E50FED1BD62AE500FDCD31 /* stop2x-iphone.png */,
 			);
@@ -139,10 +157,16 @@
 			buildActionMask = 2147483647;
 			files = (
 				E2E50FEE1BD62AE500FDCD31 /* microphone2x-iphone.png in Resources */,
+				E2FB03DC1BD75D0B00B281A5 /* darthvader2x-iphone.png in Resources */,
+				E2FB03DD1BD75D0B00B281A5 /* echo.png in Resources */,
 				E2E50FE41BD6289800FDCD31 /* LaunchScreen.storyboard in Resources */,
 				E2E50FEF1BD62AE500FDCD31 /* stop2x-iphone.png in Resources */,
 				E2E50FE11BD6289800FDCD31 /* Assets.xcassets in Resources */,
 				E2E50FDF1BD6289800FDCD31 /* Main.storyboard in Resources */,
+				E2FB03DE1BD75D0B00B281A5 /* fast2x-iphone.png in Resources */,
+				E2FB03E01BD75D0B00B281A5 /* slow2x-iphone.png in Resources */,
+				E2FB03DB1BD75D0B00B281A5 /* chipmunk2x-iphone.png in Resources */,
+				E2FB03DF1BD75D0B00B281A5 /* reverb.png in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};

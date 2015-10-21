@@ -83,10 +83,10 @@
             </objects>
             <point key="canvasLocation" x="162" y="366"/>
         </scene>
-        <!--Play Sounds View Controller-->
+        <!--Play-->
         <scene sceneID="Kka-l1-Cdm">
             <objects>
-                <viewController storyboardIdentifier="playSoundsView" id="hpS-Py-sk1" customClass="PlaySoundsViewController" customModule="PitchPerfect" customModuleProvider="target" sceneMemberID="viewController">
+                <viewController storyboardIdentifier="playSoundsView" title="Play" id="hpS-Py-sk1" customClass="PlaySoundsViewController" customModule="PitchPerfect" customModuleProvider="target" sceneMemberID="viewController">
                     <layoutGuides>
                         <viewControllerLayoutGuide type="top" id="cYp-TI-I5J"/>
                         <viewControllerLayoutGuide type="bottom" id="yBa-9d-76M"/>
@@ -94,6 +94,15 @@
                     <view key="view" contentMode="scaleToFill" id="B01-4q-FRP">
                         <rect key="frame" x="0.0" y="0.0" width="320" height="568"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+                        <subviews>
+                            <button opaque="NO" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="Pnh-tW-14J">
+                                <rect key="frame" x="46" y="79" width="60" height="60"/>
+                                <state key="normal" backgroundImage="slow2x-iphone.png"/>
+                                <connections>
+                                    <action selector="snailButtonTouch:" destination="hpS-Py-sk1" eventType="touchUpInside" id="U53-H5-Y5Y"/>
+                                </connections>
+                            </button>
+                        </subviews>
                         <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
                     </view>
                 </viewController>
@@ -104,6 +113,7 @@
     </scenes>
     <resources>
         <image name="microphone2x-iphone.png" width="200" height="200"/>
+        <image name="slow2x-iphone.png" width="200" height="200"/>
         <image name="stop2x-iphone.png" width="100" height="100"/>
     </resources>
 </document>
