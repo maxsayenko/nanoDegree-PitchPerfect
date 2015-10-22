@@ -16,6 +16,7 @@ class RecordSoundsViewController: UIViewController, AVAudioRecorderDelegate, AVA
     let textResume = "Resume!"
     
     let audioHelper = AudioHelper()
+    let recorder = RecordAudioHelper()
     
     @IBOutlet var recordLabel: UILabel!
     @IBOutlet var stopButton: UIButton!
@@ -24,7 +25,8 @@ class RecordSoundsViewController: UIViewController, AVAudioRecorderDelegate, AVA
         if(isRecording) {
             recordLabel.text = textResume
         } else {
-            audioHelper.recordWithPermission(setup: true)
+            //audioHelper.recordWithPermission(setup: true)
+            recorder.recordWithPermission(setup: true)
             recordLabel.text = textRecording
             stopButton.hidden = false
         }
@@ -35,7 +37,8 @@ class RecordSoundsViewController: UIViewController, AVAudioRecorderDelegate, AVA
         //let playSoundsViewController = self.storyboard?.instantiateViewControllerWithIdentifier("playSoundsView") as! PlaySoundsViewController
         //self.navigationController?.pushViewController(playSoundsViewController, animated: true)
         
-        audioHelper.play()
+        //audioHelper.play()
+        recorder.stopRecording()
         
     }
     

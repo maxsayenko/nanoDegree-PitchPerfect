@@ -11,8 +11,6 @@ import AVFoundation
 
 
 class AudioHelper: NSObject, AVAudioPlayerDelegate {
-     var recordSoundsViewControllerDelegate: RecordSoundsViewController?
-    
     var recorder: AVAudioRecorder!
     var player:AVAudioPlayer!
     var soundFileURL:NSURL?
@@ -59,7 +57,7 @@ class AudioHelper: NSObject, AVAudioPlayerDelegate {
         
         do {
             recorder = try AVAudioRecorder(URL: soundFileURL, settings: recordSettings)
-            recorder.delegate = recordSoundsViewControllerDelegate
+            recorder.delegate = nil
             recorder.meteringEnabled = true
             recorder.prepareToRecord() // creates/overwrites the file at soundFileURL
         } catch let error as NSError {
@@ -103,9 +101,9 @@ class AudioHelper: NSObject, AVAudioPlayerDelegate {
         }
     }
     
-        func audioPlayerDidFinishPlaying(player: AVAudioPlayer, successfully flag: Bool) {
-            print("finished playing \(flag)")
-        }
+    func audioPlayerDidFinishPlaying(player: AVAudioPlayer, successfully flag: Bool) {
+        print("finished playing \(flag)")
+    }
 }
 
 
