@@ -17,16 +17,26 @@ class RecordSoundsViewController: UIViewController, AVAudioRecorderDelegate, AVA
     
     let audioHelper = AudioHelper()
     let recorder = RecordAudioHelper()
+    let model = PitchPerfectModel()
     
     @IBOutlet var recordLabel: UILabel!
     @IBOutlet var stopButton: UIButton!
+    
+    func doneRecordingCallback(url: NSURL) -> Void {
+        print("doneRecordingCallback = \(url)")
+        model.audioUrl = url
+        
+        let playSoundsViewController = self.storyboard?.instantiateViewControllerWithIdentifier("playSoundsView") as! PlaySoundsViewController
+        playSoundsViewController.model = model
+        self.navigationController?.pushViewController(playSoundsViewController, animated: true)
+    }
     
     @IBAction func recordButtonTouch(sender: UIButton) {
         if(isRecording) {
             recordLabel.text = textResume
         } else {
             //audioHelper.recordWithPermission(setup: true)
-            recorder.recordWithPermission(setup: true)
+            recorder.recordWithPermission(setup: true, doneRecordingCallback: doneRecordingCallback)
             recordLabel.text = textRecording
             stopButton.hidden = false
         }
@@ -34,12 +44,9 @@ class RecordSoundsViewController: UIViewController, AVAudioRecorderDelegate, AVA
     }
     
     @IBAction func stopButtonTouch(sender: UIButton) {
-        //let playSoundsViewController = self.storyboard?.instantiateViewControllerWithIdentifier("playSoundsView") as! PlaySoundsViewController
-        //self.navigationController?.pushViewController(playSoundsViewController, animated: true)
-        
-        //audioHelper.play()
         recorder.stopRecording()
-        
+
+        //audioHelper.play()
     }
     
     override func viewWillAppear(animated: Bool) {
@@ -86,18 +93,18 @@ class RecordSoundsViewController: UIViewController, AVAudioRecorderDelegate, AVA
 //        successfully flag: Bool) {
 //            print("finished recording \(flag)")
 //    }
-//    
+//
 //    func audioRecorderEncodeErrorDidOccur(recorder: AVAudioRecorder,
 //        error: NSError?) {
 //            if let e = error {
 //                print("audioRecorderEncodeErrorDidOccur = \(e.localizedDescription)")
 //            }
 //    }
-//    
+//
 //    func audioPlayerDidFinishPlaying(player: AVAudioPlayer, successfully flag: Bool) {
 //        print("finished playing \(flag)")
 //    }
-//    
+//
 //    func audioPlayerDecodeErrorDidOccur(player: AVAudioPlayer, error: NSError?) {
 //        if let e = error {
 //            print("audioPlayerDecodeErrorDidOccur = \(e.localizedDescription)")

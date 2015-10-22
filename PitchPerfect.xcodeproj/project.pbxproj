@@ -16,6 +16,8 @@
 		E2E50FEE1BD62AE500FDCD31 /* microphone2x-iphone.png in Resources */ = {isa = PBXBuildFile; fileRef = E2E50FEC1BD62AE500FDCD31 /* microphone2x-iphone.png */; settings = {ASSET_TAGS = (); }; };
 		E2E50FEF1BD62AE500FDCD31 /* stop2x-iphone.png in Resources */ = {isa = PBXBuildFile; fileRef = E2E50FED1BD62AE500FDCD31 /* stop2x-iphone.png */; settings = {ASSET_TAGS = (); }; };
 		E2EBF1991BD8B7B1000C66C1 /* RecordAudioHelper.swift in Sources */ = {isa = PBXBuildFile; fileRef = E2EBF1981BD8B7B1000C66C1 /* RecordAudioHelper.swift */; settings = {ASSET_TAGS = (); }; };
+		E2EBF19B1BD8BBD6000C66C1 /* PlayAudioHelper.swift in Sources */ = {isa = PBXBuildFile; fileRef = E2EBF19A1BD8BBD6000C66C1 /* PlayAudioHelper.swift */; settings = {ASSET_TAGS = (); }; };
+		E2EBF19E1BD8C036000C66C1 /* PitchPerfectModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = E2EBF19D1BD8C036000C66C1 /* PitchPerfectModel.swift */; settings = {ASSET_TAGS = (); }; };
 		E2FB03DB1BD75D0B00B281A5 /* chipmunk2x-iphone.png in Resources */ = {isa = PBXBuildFile; fileRef = E2FB03D51BD75D0B00B281A5 /* chipmunk2x-iphone.png */; settings = {ASSET_TAGS = (); }; };
 		E2FB03DC1BD75D0B00B281A5 /* darthvader2x-iphone.png in Resources */ = {isa = PBXBuildFile; fileRef = E2FB03D61BD75D0B00B281A5 /* darthvader2x-iphone.png */; settings = {ASSET_TAGS = (); }; };
 		E2FB03DD1BD75D0B00B281A5 /* echo.png in Resources */ = {isa = PBXBuildFile; fileRef = E2FB03D71BD75D0B00B281A5 /* echo.png */; settings = {ASSET_TAGS = (); }; };
@@ -37,6 +39,8 @@
 		E2E50FEC1BD62AE500FDCD31 /* microphone2x-iphone.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "microphone2x-iphone.png"; sourceTree = "<group>"; };
 		E2E50FED1BD62AE500FDCD31 /* stop2x-iphone.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "stop2x-iphone.png"; sourceTree = "<group>"; };
 		E2EBF1981BD8B7B1000C66C1 /* RecordAudioHelper.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = RecordAudioHelper.swift; sourceTree = "<group>"; };
+		E2EBF19A1BD8BBD6000C66C1 /* PlayAudioHelper.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = PlayAudioHelper.swift; sourceTree = "<group>"; };
+		E2EBF19D1BD8C036000C66C1 /* PitchPerfectModel.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = PitchPerfectModel.swift; sourceTree = "<group>"; };
 		E2FB03D51BD75D0B00B281A5 /* chipmunk2x-iphone.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "chipmunk2x-iphone.png"; sourceTree = "<group>"; };
 		E2FB03D61BD75D0B00B281A5 /* darthvader2x-iphone.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "darthvader2x-iphone.png"; sourceTree = "<group>"; };
 		E2FB03D71BD75D0B00B281A5 /* echo.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = echo.png; sourceTree = "<group>"; };
@@ -76,6 +80,7 @@
 		E2E50FD81BD6289800FDCD31 /* PitchPerfect */ = {
 			isa = PBXGroup;
 			children = (
+				E2EBF19C1BD8C025000C66C1 /* Models */,
 				E2EBF1971BD8B79D000C66C1 /* Helpers */,
 				E2EBF1961BD8B78F000C66C1 /* Controllers */,
 				E2E50FEB1BD62AC700FDCD31 /* images */,
@@ -117,8 +122,17 @@
 			children = (
 				E2FB03E11BD7782400B281A5 /* AudioHelper.swift */,
 				E2EBF1981BD8B7B1000C66C1 /* RecordAudioHelper.swift */,
+				E2EBF19A1BD8BBD6000C66C1 /* PlayAudioHelper.swift */,
 			);
 			name = Helpers;
+			sourceTree = "<group>";
+		};
+		E2EBF19C1BD8C025000C66C1 /* Models */ = {
+			isa = PBXGroup;
+			children = (
+				E2EBF19D1BD8C036000C66C1 /* PitchPerfectModel.swift */,
+			);
+			name = Models;
 			sourceTree = "<group>";
 		};
 /* End PBXGroup section */
@@ -199,9 +213,11 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				E2EBF19B1BD8BBD6000C66C1 /* PlayAudioHelper.swift in Sources */,
 				E2E50FDC1BD6289800FDCD31 /* RecordSoundsViewController.swift in Sources */,
 				E2EBF1991BD8B7B1000C66C1 /* RecordAudioHelper.swift in Sources */,
 				E299702B1BD6AFF400F679B1 /* PlaySoundsViewController.swift in Sources */,
+				E2EBF19E1BD8C036000C66C1 /* PitchPerfectModel.swift in Sources */,
 				E2FB03E21BD7782400B281A5 /* AudioHelper.swift in Sources */,
 				E2E50FDA1BD6289800FDCD31 /* AppDelegate.swift in Sources */,
 			);

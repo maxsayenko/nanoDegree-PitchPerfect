@@ -11,8 +11,12 @@ import AVFoundation
 
 class RecordAudioHelper: NSObject, AVAudioRecorderDelegate {
     var recorder: AVAudioRecorder!
+    var pitchPerfectModel: PitchPerfectModel = PitchPerfectModel()
+    var doneRecordingCallback: ((NSURL) -> Void)?
     
-    func recordWithPermission(setup setup:Bool) {
+    func recordWithPermission(setup setup:Bool, doneRecordingCallback callback:((url: NSURL) -> Void)) {
+        doneRecordingCallback = callback
+//        pitchPerfectModel = model
         let session:AVAudioSession = AVAudioSession.sharedInstance()
         if (session.respondsToSelector("requestRecordPermission:")) {
             AVAudioSession.sharedInstance().requestRecordPermission({(granted: Bool)-> Void in
@@ -64,6 +68,9 @@ class RecordAudioHelper: NSObject, AVAudioRecorderDelegate {
     func audioRecorderDidFinishRecording(recorder: AVAudioRecorder,
         successfully flag: Bool) {
             print("finished recording \(flag)")
+            print(recorder.url)
+            pitchPerfectModel.audioUrl = recorder.url
+            doneRecordingCallback!(recorder.url)
     }
     
     func audioRecorderEncodeErrorDidOccur(recorder: AVAudioRecorder,
