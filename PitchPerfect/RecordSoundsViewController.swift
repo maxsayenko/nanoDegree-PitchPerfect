@@ -17,17 +17,17 @@ class RecordSoundsViewController: UIViewController, AVAudioRecorderDelegate, AVA
     
     let audioHelper = AudioHelper()
     let recorder = RecordAudioHelper()
-    let model = PitchPerfectModel()
+    let pitchPerfectModel = PitchPerfectModel()
     
     @IBOutlet var recordLabel: UILabel!
     @IBOutlet var stopButton: UIButton!
     
     func doneRecordingCallback(url: NSURL) -> Void {
         print("doneRecordingCallback = \(url)")
-        model.audioUrl = url
+        pitchPerfectModel.audioUrl = url
         
         let playSoundsViewController = self.storyboard?.instantiateViewControllerWithIdentifier("playSoundsView") as! PlaySoundsViewController
-        playSoundsViewController.model = model
+        playSoundsViewController.pitchPerfectModel = pitchPerfectModel
         self.navigationController?.pushViewController(playSoundsViewController, animated: true)
     }
     

@@ -11,30 +11,33 @@ import AVFoundation
 
 class PlayAudioHelper: NSObject, AVAudioPlayerDelegate {
     var player:AVAudioPlayer!
+    var pitchPerfectModel: PitchPerfectModel?
     
-    func play() {
+    func play(model: PitchPerfectModel) {
         player?.stop()
         
-        let url:NSURL? = NSURL(fileURLWithPath: "pitchPerfectAudioRecord.m4a")
-        //        if self.recorder != nil {
-        //            url = self.recorder.url
-        //        } else {
-        //            url = self.soundFileURL!
-        //        }
-        print("playing \(url)")
+//        let url:NSURL? = model.audioUrl
+//        //        if self.recorder != nil {
+//        //            url = self.recorder.url
+//        //        } else {
+//        //            url = self.soundFileURL!
+//        //        }
+//        print("playing \(url)")
         
-        do {
-            self.player = try AVAudioPlayer(contentsOfURL: url!)
-            player.delegate = self
-            print(player.delegate)
-            player.prepareToPlay()
-            player.volume = 1.0
-            player.play()
-        } catch let error as NSError {
-            self.player = nil
-            print("Error in play = \(error.localizedDescription)")
+        if let url = model.audioUrl {
+            print("about to play \(url)")
+            do {
+                self.player = try AVAudioPlayer(contentsOfURL: url)
+                player.delegate = self
+                print(player.delegate)
+                player.prepareToPlay()
+                player.volume = 1.0
+                player.play()
+            } catch let error as NSError {
+                self.player = nil
+                print("Error in play = \(error.localizedDescription)")
+            }
         }
-        
     }
     
     func audioPlayerDidFinishPlaying(player: AVAudioPlayer, successfully flag: Bool) {

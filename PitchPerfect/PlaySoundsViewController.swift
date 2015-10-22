@@ -9,19 +9,21 @@
 import UIKit
 
 class PlaySoundsViewController: UIViewController {
-    var model: PitchPerfectModel?
+    var pitchPerfectModel: PitchPerfectModel?
     let player = PlayAudioHelper()
     
     @IBAction func snailButtonTouch(sender: UIButton) {
-        player.play()
+        if let model = pitchPerfectModel {
+            player.play(model)
+        }
+        
     }
-    
     
     override func viewDidLoad() {
         self.navigationController?.navigationBarHidden = false
         super.viewDidLoad()
         
-        print("PlaySoundsViewController url = \(model?.audioUrl)")
+        print("PlaySoundsViewController url = \(pitchPerfectModel?.audioUrl)")
         // Do any additional setup after loading the view, typically from a nib.
     }
     
