@@ -23,7 +23,7 @@ class PlaySoundsViewController: UIViewController {
         self.navigationController?.navigationBarHidden = false
         super.viewDidLoad()
         
-        print("PlaySoundsViewController url = \(pitchPerfectModel?.audioUrl)")
+        //print("PlaySoundsViewController url = \(pitchPerfectModel?.audioUrl)")
         // Do any additional setup after loading the view, typically from a nib.
     }
     
