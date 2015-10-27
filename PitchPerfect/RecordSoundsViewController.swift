@@ -9,12 +9,19 @@
 import UIKit
 import AVFoundation
 
-class RecordSoundsViewController: UIViewController, AVAudioRecorderDelegate, AVAudioPlayerDelegate {
-    var isRecording: Bool = false
-    let textRecording = "Recording!"
-    let textRecord = "Record!"
-    let textResume = "Resume!"
+enum RecordState {
+    case Stopped
+    case Recording
+    case Paused
+}
 
+class RecordSoundsViewController: UIViewController, AVAudioRecorderDelegate, AVAudioPlayerDelegate {
+    //var isRecording: Bool = false
+    let textRecording = "Recording!"
+    let textRecord = "Tap to record!"
+    let textResume = "Resume!"
+    var recordState: RecordState = .Stopped
+    
     let recorder = RecordAudioHelper()
     let pitchPerfectModel = PitchPerfectModel()
     
@@ -22,14 +29,19 @@ class RecordSoundsViewController: UIViewController, AVAudioRecorderDelegate, AVA
     @IBOutlet var stopButton: UIButton!
     
     @IBAction func recordButtonTouch(sender: UIButton) {
-        if(isRecording) {
-            recordLabel.text = textResume
-        } else {
+        switch recordState {
+        case .Stopped:
             recorder.recordWithPermission(setup: true, doneRecordingCallback: doneRecordingCallback)
             recordLabel.text = textRecording
             stopButton.hidden = false
+            recordState = .Recording
+        case .Recording:
+            // pause code here
+            break
+        
+        default:
+            break
         }
-        isRecording = !isRecording
     }
     
     func doneRecordingCallback(url: NSURL) -> Void {
@@ -42,11 +54,15 @@ class RecordSoundsViewController: UIViewController, AVAudioRecorderDelegate, AVA
     }
     
     @IBAction func stopButtonTouch(sender: UIButton) {
+        recordState = .Stopped
         recorder.stopRecording()
     }
     
     override func viewWillAppear(animated: Bool) {
-        //self.navigationController?.navigationBarHidden = true
+        // initial state of the view
+        recordLabel.text = textRecord
+        stopButton.hidden = true
+        recordState = .Stopped
         super.viewWillAppear(animated)
     }
     

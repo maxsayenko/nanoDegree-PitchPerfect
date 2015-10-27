@@ -10,34 +10,29 @@ import Foundation
 import AVFoundation
 
 class AudioEngineHelper: NSObject, AVAudioPlayerDelegate {
-    
-    //var recievedAudio: RecordedAudio!
     var audioEngine: AVAudioEngine! = AVAudioEngine()
     var audioFile: AVAudioFile!
+    
+    override init() {
+    }
     
     init(model: PitchPerfectModel) {
         do {
             audioFile = try AVAudioFile(forReading: model.audioUrl!)
         }
-        catch let error as ErrorType {
+        catch let error {
             print("File load ERROR!")
             print(error)
         }
     }
-    
-    override init() {
 
-    }
-    
     func playChipmunkSound() {
         commonAudioFunction(1000, typeOfChange: "pitch")
     }
     
     func commonAudioFunction(audioChangeNumber: Float, typeOfChange: String){
         let audioPlayerNode = AVAudioPlayerNode()
-        
-    
-        
+
         audioPlayerNode.stop()
         audioEngine.stop()
         audioEngine.reset()
@@ -55,17 +50,19 @@ class AudioEngineHelper: NSObject, AVAudioPlayerDelegate {
         audioEngine.attachNode(changeAudioUnitTime)
         audioEngine.connect(audioPlayerNode, to: changeAudioUnitTime, format: nil)
         audioEngine.connect(changeAudioUnitTime, to: audioEngine.outputNode, format: nil)
+        
         audioPlayerNode.scheduleFile(audioFile, atTime: nil, completionHandler: audioEngineCompletionHandler)
+        
+        //audioPlayerNode.scheduleBuffer(<#T##buffer: AVAudioPCMBuffer##AVAudioPCMBuffer#>, completionHandler: audioEngineCompletionHandler)
+        
         
         do {
            try audioEngine.start()
         }
-        catch let error as ErrorType {
+        catch let error {
             print("Audio Engine StartError")
             print(error)
         }
-
-        //audioEngine.startAndReturnError(nil)
         
         audioPlayerNode.play()
     }
