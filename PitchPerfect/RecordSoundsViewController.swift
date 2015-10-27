@@ -9,12 +9,6 @@
 import UIKit
 import AVFoundation
 
-enum RecordState {
-    case Stopped
-    case Recording
-    case Paused
-}
-
 class RecordSoundsViewController: UIViewController, AVAudioRecorderDelegate, AVAudioPlayerDelegate {
     //var isRecording: Bool = false
     let textRecording = "Recording!"
@@ -36,11 +30,14 @@ class RecordSoundsViewController: UIViewController, AVAudioRecorderDelegate, AVA
             stopButton.hidden = false
             recordState = .Recording
         case .Recording:
-            // pause code here
-            break
-        
-        default:
-            break
+            // add animation or pause button here
+            recorder.pause()
+            recordLabel.text = textResume
+            recordState = .Paused
+        case .Paused:
+            recorder.resume()
+            recordLabel.text = textRecording
+            recordState = .Recording
         }
     }
     
@@ -55,7 +52,7 @@ class RecordSoundsViewController: UIViewController, AVAudioRecorderDelegate, AVA
     
     @IBAction func stopButtonTouch(sender: UIButton) {
         recordState = .Stopped
-        recorder.stopRecording()
+        recorder.stop()
     }
     
     override func viewWillAppear(animated: Bool) {

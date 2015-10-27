@@ -59,8 +59,16 @@ class RecordAudioHelper: NSObject, AVAudioRecorderDelegate {
         }
     }
     
-    func stopRecording() {
+    func stop() {
         recorder?.stop()
+    }
+    
+    func pause() {
+        recorder?.pause()
+    }
+    
+    func resume() {
+        recorder?.record()
     }
     
     func audioRecorderDidFinishRecording(recorder: AVAudioRecorder,
