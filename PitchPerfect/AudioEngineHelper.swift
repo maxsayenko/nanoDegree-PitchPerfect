@@ -34,7 +34,9 @@ class AudioEngineHelper: NSObject, AVAudioPlayerDelegate {
     }
     
     func commonAudioFunction(audioChangeNumber: Float, typeOfChange: String){
-        var audioPlayerNode = AVAudioPlayerNode()
+        let audioPlayerNode = AVAudioPlayerNode()
+        
+    
         
         audioPlayerNode.stop()
         audioEngine.stop()
@@ -42,7 +44,7 @@ class AudioEngineHelper: NSObject, AVAudioPlayerDelegate {
         
         audioEngine.attachNode(audioPlayerNode)
         
-        var changeAudioUnitTime = AVAudioUnitTimePitch()
+        let changeAudioUnitTime = AVAudioUnitTimePitch()
         
         if (typeOfChange == "rate") {
             changeAudioUnitTime.rate = audioChangeNumber
@@ -53,7 +55,7 @@ class AudioEngineHelper: NSObject, AVAudioPlayerDelegate {
         audioEngine.attachNode(changeAudioUnitTime)
         audioEngine.connect(audioPlayerNode, to: changeAudioUnitTime, format: nil)
         audioEngine.connect(changeAudioUnitTime, to: audioEngine.outputNode, format: nil)
-        audioPlayerNode.scheduleFile(audioFile, atTime: nil, completionHandler: nil)
+        audioPlayerNode.scheduleFile(audioFile, atTime: nil, completionHandler: audioEngineCompletionHandler)
         
         do {
            try audioEngine.start()
@@ -66,5 +68,9 @@ class AudioEngineHelper: NSObject, AVAudioPlayerDelegate {
         //audioEngine.startAndReturnError(nil)
         
         audioPlayerNode.play()
+    }
+    
+    func audioEngineCompletionHandler() -> Void {
+        print("audio engine finished playing")
     }
 }
