@@ -8,6 +8,7 @@
 
 /* Begin PBXBuildFile section */
 		E299702B1BD6AFF400F679B1 /* PlaySoundsViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = E299702A1BD6AFF400F679B1 /* PlaySoundsViewController.swift */; settings = {ASSET_TAGS = (); }; };
+		E2C2A35F1BDF5D0300100394 /* AudioEngineHelper.swift in Sources */ = {isa = PBXBuildFile; fileRef = E2C2A35E1BDF5D0300100394 /* AudioEngineHelper.swift */; settings = {ASSET_TAGS = (); }; };
 		E2E50FDA1BD6289800FDCD31 /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = E2E50FD91BD6289800FDCD31 /* AppDelegate.swift */; };
 		E2E50FDC1BD6289800FDCD31 /* RecordSoundsViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = E2E50FDB1BD6289800FDCD31 /* RecordSoundsViewController.swift */; };
 		E2E50FDF1BD6289800FDCD31 /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = E2E50FDD1BD6289800FDCD31 /* Main.storyboard */; };
@@ -29,6 +30,7 @@
 
 /* Begin PBXFileReference section */
 		E299702A1BD6AFF400F679B1 /* PlaySoundsViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = PlaySoundsViewController.swift; sourceTree = "<group>"; };
+		E2C2A35E1BDF5D0300100394 /* AudioEngineHelper.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = AudioEngineHelper.swift; sourceTree = "<group>"; };
 		E2E50FD61BD6289800FDCD31 /* PitchPerfect.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = PitchPerfect.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		E2E50FD91BD6289800FDCD31 /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
 		E2E50FDB1BD6289800FDCD31 /* RecordSoundsViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = RecordSoundsViewController.swift; sourceTree = "<group>"; };
@@ -123,6 +125,7 @@
 				E2FB03E11BD7782400B281A5 /* AudioHelper.swift */,
 				E2EBF1981BD8B7B1000C66C1 /* RecordAudioHelper.swift */,
 				E2EBF19A1BD8BBD6000C66C1 /* PlayAudioHelper.swift */,
+				E2C2A35E1BDF5D0300100394 /* AudioEngineHelper.swift */,
 			);
 			name = Helpers;
 			sourceTree = "<group>";
@@ -215,6 +218,7 @@
 			files = (
 				E2EBF19B1BD8BBD6000C66C1 /* PlayAudioHelper.swift in Sources */,
 				E2E50FDC1BD6289800FDCD31 /* RecordSoundsViewController.swift in Sources */,
+				E2C2A35F1BDF5D0300100394 /* AudioEngineHelper.swift in Sources */,
 				E2EBF1991BD8B7B1000C66C1 /* RecordAudioHelper.swift in Sources */,
 				E299702B1BD6AFF400F679B1 /* PlaySoundsViewController.swift in Sources */,
 				E2EBF19E1BD8C036000C66C1 /* PitchPerfectModel.swift in Sources */,

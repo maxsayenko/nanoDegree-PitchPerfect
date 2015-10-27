@@ -11,16 +11,20 @@ import UIKit
 class PlaySoundsViewController: UIViewController {
     var pitchPerfectModel: PitchPerfectModel?
     let player = PlayAudioHelper()
+    var player2: AudioEngineHelper = AudioEngineHelper()
     
     @IBAction func snailButtonTouch(sender: UIButton) {
-        if let model = pitchPerfectModel {
-            player.play(model)
-        }
+//        if let model = pitchPerfectModel {
+//            player.play(model)
+//        }
+        player2.playChipmunkSound()
         
     }
     
     override func viewDidLoad() {
-        self.navigationController?.navigationBarHidden = false
+        //self.navigationController?.navigationBarHidden = false
+        player2 = AudioEngineHelper(model: pitchPerfectModel!)
+        
         super.viewDidLoad()
         
         //print("PlaySoundsViewController url = \(pitchPerfectModel?.audioUrl)")

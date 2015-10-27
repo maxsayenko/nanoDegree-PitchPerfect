@@ -46,7 +46,7 @@ class RecordSoundsViewController: UIViewController, AVAudioRecorderDelegate, AVA
     }
     
     override func viewWillAppear(animated: Bool) {
-        self.navigationController?.navigationBarHidden = true
+        //self.navigationController?.navigationBarHidden = true
         super.viewWillAppear(animated)
     }
     

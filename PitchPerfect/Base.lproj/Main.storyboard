@@ -20,7 +20,7 @@
             </objects>
             <point key="canvasLocation" x="-279" y="366"/>
         </scene>
-        <!--Record Sounds View Controller-->
+        <!--Record-->
         <scene sceneID="tne-QT-ifu">
             <objects>
                 <viewController storyboardIdentifier="recordSoundsView" id="BYZ-38-t0r" customClass="RecordSoundsViewController" customModule="PitchPerfect" customModuleProvider="target" sceneMemberID="viewController">
@@ -71,7 +71,7 @@
                             <constraint firstItem="cLH-dM-BXl" firstAttribute="top" secondItem="lPb-3l-u6v" secondAttribute="bottom" constant="8" symbolic="YES" id="uBc-Sv-7CB"/>
                         </constraints>
                     </view>
-                    <navigationItem key="navigationItem" id="ktR-F6-3eD">
+                    <navigationItem key="navigationItem" title="Record" id="ktR-F6-3eD">
                         <barButtonItem key="backBarButtonItem" title="Record" id="MQn-C1-1qC"/>
                     </navigationItem>
                     <connections>
