@@ -10,7 +10,6 @@ import UIKit
 import AVFoundation
 
 class RecordSoundsViewController: UIViewController, AVAudioRecorderDelegate, AVAudioPlayerDelegate {
-    //var isRecording: Bool = false
     let textRecording = "Recording!"
     let textRecord = "Tap to record!"
     let textResume = "Resume!"

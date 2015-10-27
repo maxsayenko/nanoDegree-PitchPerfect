@@ -2,6 +2,7 @@
 <document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="8191" systemVersion="14F27" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" initialViewController="4DW-Bj-Zvk">
     <dependencies>
         <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="8154"/>
+        <capability name="Constraints to layout margins" minToolsVersion="6.0"/>
     </dependencies>
     <scenes>
         <!--Navigation Controller-->
@@ -12,6 +13,10 @@
                         <rect key="frame" x="0.0" y="0.0" width="320" height="44"/>
                         <autoresizingMask key="autoresizingMask"/>
                     </navigationBar>
+                    <toolbar key="toolbar" opaque="NO" clearsContextBeforeDrawing="NO" contentMode="scaleToFill" id="ZT6-m6-iUv">
+                        <rect key="frame" x="0.0" y="524" width="320" height="44"/>
+                        <autoresizingMask key="autoresizingMask"/>
+                    </toolbar>
                     <connections>
                         <segue destination="BYZ-38-t0r" kind="relationship" relationship="rootViewController" id="GRV-Oq-tjO"/>
                     </connections>
@@ -95,23 +100,73 @@
                         <rect key="frame" x="0.0" y="0.0" width="320" height="568"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <subviews>
-                            <button opaque="NO" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="Pnh-tW-14J">
-                                <rect key="frame" x="46" y="79" width="60" height="60"/>
+                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="Pnh-tW-14J">
+                                <rect key="frame" x="54" y="132" width="80" height="80"/>
+                                <constraints>
+                                    <constraint firstAttribute="width" constant="80" id="CoG-v0-CcJ"/>
+                                    <constraint firstAttribute="height" constant="80" id="Lka-Cx-kJh"/>
+                                </constraints>
                                 <state key="normal" backgroundImage="slow2x-iphone.png"/>
                                 <connections>
                                     <action selector="snailButtonTouch:" destination="hpS-Py-sk1" eventType="touchUpInside" id="U53-H5-Y5Y"/>
                                 </connections>
                             </button>
+                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="aG2-sx-lw8">
+                                <rect key="frame" x="54" y="244" width="80" height="80"/>
+                                <constraints>
+                                    <constraint firstAttribute="height" constant="80" id="CAK-zZ-kCD"/>
+                                    <constraint firstAttribute="width" constant="80" id="XhX-RL-yLo"/>
+                                </constraints>
+                                <state key="normal" backgroundImage="chipmunk2x-iphone.png"/>
+                                <connections>
+                                    <action selector="snailButtonTouch:" destination="hpS-Py-sk1" eventType="touchUpInside" id="jQP-HN-Qu8"/>
+                                </connections>
+                            </button>
+                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="D03-bd-0en">
+                                <rect key="frame" x="197" y="244" width="80" height="80"/>
+                                <constraints>
+                                    <constraint firstAttribute="height" constant="80" id="AKU-ad-HBg"/>
+                                    <constraint firstAttribute="width" constant="80" id="cUR-oK-Qbz"/>
+                                </constraints>
+                                <state key="normal" backgroundImage="darthvader2x-iphone.png"/>
+                                <connections>
+                                    <action selector="snailButtonTouch:" destination="hpS-Py-sk1" eventType="touchUpInside" id="RYJ-IQ-1Rh"/>
+                                </connections>
+                            </button>
+                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="cFN-te-zYW">
+                                <rect key="frame" x="197" y="132" width="80" height="80"/>
+                                <constraints>
+                                    <constraint firstAttribute="width" constant="80" id="QkI-p7-K1w"/>
+                                    <constraint firstAttribute="height" constant="80" id="c3b-AM-LRx"/>
+                                </constraints>
+                                <state key="normal" backgroundImage="slow2x-iphone.png"/>
+                                <connections>
+                                    <action selector="snailButtonTouch:" destination="hpS-Py-sk1" eventType="touchUpInside" id="TRZ-wI-ZGX"/>
+                                </connections>
+                            </button>
                         </subviews>
                         <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
+                        <constraints>
+                            <constraint firstItem="aG2-sx-lw8" firstAttribute="top" secondItem="D03-bd-0en" secondAttribute="top" id="449-z8-T9J"/>
+                            <constraint firstItem="cFN-te-zYW" firstAttribute="leading" secondItem="D03-bd-0en" secondAttribute="leading" id="8Hf-SU-fRy"/>
+                            <constraint firstItem="Pnh-tW-14J" firstAttribute="leading" secondItem="B01-4q-FRP" secondAttribute="leadingMargin" constant="38" id="Hos-cm-4Hc"/>
+                            <constraint firstItem="aG2-sx-lw8" firstAttribute="leading" secondItem="Pnh-tW-14J" secondAttribute="leading" id="QkX-Yh-7hH"/>
+                            <constraint firstItem="D03-bd-0en" firstAttribute="leading" secondItem="aG2-sx-lw8" secondAttribute="trailing" constant="63" id="Vhj-X9-yeP"/>
+                            <constraint firstItem="aG2-sx-lw8" firstAttribute="centerY" secondItem="B01-4q-FRP" secondAttribute="centerY" id="cEl-qT-6ku"/>
+                            <constraint firstItem="cFN-te-zYW" firstAttribute="top" secondItem="Pnh-tW-14J" secondAttribute="top" id="pZ9-Oa-W0k"/>
+                            <constraint firstItem="aG2-sx-lw8" firstAttribute="top" secondItem="Pnh-tW-14J" secondAttribute="bottom" constant="32" id="xKr-Ln-TVd"/>
+                        </constraints>
                     </view>
+                    <navigationItem key="navigationItem" title="Play" id="nPS-Ns-uHB"/>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="16K-XD-lxq" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="531" y="363"/>
+            <point key="canvasLocation" x="533" y="366"/>
         </scene>
     </scenes>
     <resources>
+        <image name="chipmunk2x-iphone.png" width="200" height="200"/>
+        <image name="darthvader2x-iphone.png" width="200" height="200"/>
         <image name="microphone2x-iphone.png" width="200" height="200"/>
         <image name="slow2x-iphone.png" width="200" height="200"/>
         <image name="stop2x-iphone.png" width="100" height="100"/>
