@@ -12,11 +12,14 @@ import AVFoundation
 class AudioEngineHelper: NSObject, AVAudioPlayerDelegate {
     var audioEngine: AVAudioEngine! = AVAudioEngine()
     var audioFile: AVAudioFile!
+    var finishPlayingCallback: (() -> Void)? = nil
     
     override init() {
     }
     
-    init(model: PitchPerfectModel) {
+    init(model: PitchPerfectModel, finishPlayingCallback callback: (() -> Void)?) {
+        finishPlayingCallback = callback
+        
         do {
             audioFile = try AVAudioFile(forReading: model.audioUrl!)
         }
@@ -63,10 +66,19 @@ class AudioEngineHelper: NSObject, AVAudioPlayerDelegate {
         audioEngine.connect(audioPlayerNode, to: changeAudioUnitTime, format: nil)
         audioEngine.connect(changeAudioUnitTime, to: audioEngine.outputNode, format: nil)
         
-        audioPlayerNode.scheduleFile(audioFile, atTime: nil, completionHandler: audioEngineCompletionHandler)
-        
-        //audioPlayerNode.scheduleBuffer(<#T##buffer: AVAudioPCMBuffer##AVAudioPCMBuffer#>, completionHandler: audioEngineCompletionHandler)
-        
+        // Scheduling file to play. Had to convert it to buffer as in 'scheduleFile' function completionHandler didn't fire correctly
+        do {
+            // Converting file to buffer
+            let file: AVAudioFile = try AVAudioFile(forReading: audioFile.url)
+            let buffer = AVAudioPCMBuffer(PCMFormat: file.processingFormat, frameCapacity: UInt32(file.length))
+            try file.readIntoBuffer(buffer)
+            //  Scheduling buffer
+            audioPlayerNode.scheduleBuffer(buffer, completionHandler: finishPlayingCallback)
+        }
+        catch let error {
+            print("Playing Error")
+            print(error)
+        }
         
         do {
            try audioEngine.start()

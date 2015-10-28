@@ -32,8 +32,12 @@ class PlaySoundsViewController: UIViewController {
     @IBAction func stopButtonTouch(sender: UIButton) {
     }
     
+    func callback() {
+        print("Doneee")
+    }
+    
     override func viewDidLoad() {
-        player = AudioEngineHelper(model: pitchPerfectModel!)
+        player = AudioEngineHelper(model: pitchPerfectModel!, finishPlayingCallback: callback)
         stopButton.enabled = false
         super.viewDidLoad()
         // Do any additional setup after loading the view, typically from a nib.
