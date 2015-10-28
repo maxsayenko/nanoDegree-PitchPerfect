@@ -30,6 +30,18 @@ class AudioEngineHelper: NSObject, AVAudioPlayerDelegate {
         commonAudioFunction(1000, typeOfChange: "pitch")
     }
     
+    func playSnailSound() {
+        commonAudioFunction(1/2, typeOfChange: "rate")
+    }
+    
+    func playRabbitSound() {
+        commonAudioFunction(2, typeOfChange: "rate")
+    }
+    
+    func playDarthVaderSound() {
+        commonAudioFunction(-1000, typeOfChange: "pitch")
+    }
+    
     func commonAudioFunction(audioChangeNumber: Float, typeOfChange: String){
         let audioPlayerNode = AVAudioPlayerNode()
 
