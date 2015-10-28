@@ -12,15 +12,24 @@ import AVFoundation
 class RecordAudioHelper: NSObject, AVAudioRecorderDelegate {
     var recorder: AVAudioRecorder!
     var doneRecordingCallback: ((NSURL) -> Void)?
+    let session: AVAudioSession = AVAudioSession.sharedInstance()
     
     func recordWithPermission(setup setup:Bool, doneRecordingCallback callback:((url: NSURL) -> Void)) {
         doneRecordingCallback = callback
-        let session:AVAudioSession = AVAudioSession.sharedInstance()
+        
+        do {
+            try session.setActive(true)
+        }
+        catch let err {
+            print("Recorder Setting active category Error!")
+            print(err)
+        }
+
         if (session.respondsToSelector("requestRecordPermission:")) {
             AVAudioSession.sharedInstance().requestRecordPermission({(granted: Bool)-> Void in
-                if granted {
+                if (granted) {
                     print("Permission to record granted")
-                    //self.setSessionPlayAndRecord()
+                    self.setSessionPlayAndRecord()
                     if setup {
                         self.setupRecorder()
                     }
@@ -31,6 +40,22 @@ class RecordAudioHelper: NSObject, AVAudioRecorderDelegate {
             })
         } else {
             print("requestRecordPermission unrecognized")
+        }
+    }
+    
+    func setSessionPlayAndRecord() {
+        let session = AVAudioSession.sharedInstance()
+        do {
+            try session.setCategory(AVAudioSessionCategoryPlayAndRecord)
+        } catch let error as NSError {
+            print("could not set session category")
+            print(error.localizedDescription)
+        }
+        do {
+            try session.setActive(true)
+        } catch let error as NSError {
+            print("could not make session active")
+            print(error.localizedDescription)
         }
     }
     
@@ -61,6 +86,14 @@ class RecordAudioHelper: NSObject, AVAudioRecorderDelegate {
     
     func stop() {
         recorder?.stop()
+        let session:AVAudioSession = AVAudioSession.sharedInstance()
+        do {
+            try session.setActive(false)
+        }
+        catch let error{
+            print("Recorded Stop Error")
+            print(error)
+        }
     }
     
     func pause() {
@@ -80,6 +113,7 @@ class RecordAudioHelper: NSObject, AVAudioRecorderDelegate {
     func audioRecorderEncodeErrorDidOccur(recorder: AVAudioRecorder,
         error: NSError?) {
             if let e = error {
+                print("Error during recording")
                 print("\(e.localizedDescription)")
             }
     } 
