@@ -154,6 +154,17 @@
                                     <action selector="snailButtonTouch:" destination="hpS-Py-sk1" eventType="touchUpInside" id="VGO-jP-up9"/>
                                 </connections>
                             </button>
+                            <button opaque="NO" contentMode="scaleToFill" enabled="NO" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="7Wo-nW-b7o">
+                                <rect key="frame" x="145" y="407" width="30" height="30"/>
+                                <constraints>
+                                    <constraint firstAttribute="height" constant="30" id="24S-T6-Lfi"/>
+                                    <constraint firstAttribute="width" constant="30" id="Sgi-Ze-6eJ"/>
+                                </constraints>
+                                <state key="normal" backgroundImage="stop2x-iphone.png"/>
+                                <connections>
+                                    <action selector="stopButtonTouch:" destination="hpS-Py-sk1" eventType="touchUpInside" id="1a5-Qk-dMC"/>
+                                </connections>
+                            </button>
                         </subviews>
                         <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
                         <constraints>
@@ -165,11 +176,16 @@
                             <constraint firstItem="VGS-FS-a8F" firstAttribute="leading" secondItem="O3H-lT-9dV" secondAttribute="trailing" constant="18" id="TkC-6p-L3Q"/>
                             <constraint firstItem="VGS-FS-a8F" firstAttribute="centerX" secondItem="B01-4q-FRP" secondAttribute="centerX" id="ePM-e6-bfE"/>
                             <constraint firstItem="O3H-lT-9dV" firstAttribute="centerY" secondItem="cFN-te-zYW" secondAttribute="centerY" id="hdC-zR-WJa"/>
+                            <constraint firstItem="7Wo-nW-b7o" firstAttribute="centerX" secondItem="B01-4q-FRP" secondAttribute="centerX" id="mFa-OW-NOq"/>
+                            <constraint firstItem="7Wo-nW-b7o" firstAttribute="top" secondItem="D03-bd-0en" secondAttribute="bottom" constant="15" id="opw-TA-9eB"/>
                             <constraint firstItem="VGS-FS-a8F" firstAttribute="centerY" secondItem="B01-4q-FRP" secondAttribute="centerY" id="pgO-Fh-x9k"/>
                             <constraint firstItem="D03-bd-0en" firstAttribute="centerX" secondItem="cFN-te-zYW" secondAttribute="centerX" id="usG-Jn-UJP"/>
                         </constraints>
                     </view>
                     <navigationItem key="navigationItem" title="Play" id="nPS-Ns-uHB"/>
+                    <connections>
+                        <outlet property="stopButton" destination="7Wo-nW-b7o" id="Rg3-ZA-bj0"/>
+                    </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="16K-XD-lxq" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>

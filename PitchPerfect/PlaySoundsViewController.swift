@@ -10,33 +10,32 @@ import UIKit
 
 class PlaySoundsViewController: UIViewController {
     var pitchPerfectModel: PitchPerfectModel?
-    let player = PlayAudioHelper()
-    var player2: AudioEngineHelper = AudioEngineHelper()
+    var player: AudioEngineHelper?
+    @IBOutlet var stopButton: UIButton!
     
     @IBAction func snailButtonTouch(sender: UIButton) {
-
+        player!.playSnailSound()
     }
     
     @IBAction func rabbitButtonTouch(sender: UIButton) {
-        player2.playChipmunkSound()
+        player!.playRabbitSound()
     }
     
     @IBAction func squirellButtonTouch(sender: UIButton) {
-
+        player!.playChipmunkSound()
     }
     
     @IBAction func darthVaderButtonTouch(sender: UIButton) {
-
+        player!.playDarthVaderSound()
+    }
+    
+    @IBAction func stopButtonTouch(sender: UIButton) {
     }
     
     override func viewDidLoad() {
-        //self.navigationController?.navigationBarHidden = false
-        player2 = AudioEngineHelper(model: pitchPerfectModel!)
-        
+        player = AudioEngineHelper(model: pitchPerfectModel!)
+        stopButton.enabled = false
         super.viewDidLoad()
-        
-        //print("PlaySoundsViewController url = \(pitchPerfectModel?.audioUrl)")
         // Do any additional setup after loading the view, typically from a nib.
     }
-    
 }
