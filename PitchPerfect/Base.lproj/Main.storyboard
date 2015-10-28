@@ -101,17 +101,6 @@
                         <rect key="frame" x="0.0" y="0.0" width="320" height="568"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <subviews>
-                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="Pnh-tW-14J">
-                                <rect key="frame" x="33" y="172" width="80" height="80"/>
-                                <constraints>
-                                    <constraint firstAttribute="width" constant="80" id="CoG-v0-CcJ"/>
-                                    <constraint firstAttribute="height" constant="80" id="Lka-Cx-kJh"/>
-                                </constraints>
-                                <state key="normal" backgroundImage="slow2x-iphone.png"/>
-                                <connections>
-                                    <action selector="snailButtonTouch:" destination="hpS-Py-sk1" eventType="touchUpInside" id="U53-H5-Y5Y"/>
-                                </connections>
-                            </button>
                             <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="aG2-sx-lw8">
                                 <rect key="frame" x="33" y="312" width="80" height="80"/>
                                 <constraints>
@@ -120,10 +109,10 @@
                                 </constraints>
                                 <state key="normal" backgroundImage="chipmunk2x-iphone.png"/>
                                 <connections>
-                                    <action selector="snailButtonTouch:" destination="hpS-Py-sk1" eventType="touchUpInside" id="jQP-HN-Qu8"/>
+                                    <action selector="squirellButtonTouch:" destination="hpS-Py-sk1" eventType="touchUpInside" id="WW2-id-vHd"/>
                                 </connections>
                             </button>
-                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="D03-bd-0en">
+                            <button opaque="NO" contentMode="scaleToFill" restorationIdentifier="darthVaderButton" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="D03-bd-0en">
                                 <rect key="frame" x="203" y="312" width="80" height="80"/>
                                 <constraints>
                                     <constraint firstAttribute="height" constant="80" id="AKU-ad-HBg"/>
@@ -131,7 +120,7 @@
                                 </constraints>
                                 <state key="normal" backgroundImage="darthvader2x-iphone.png"/>
                                 <connections>
-                                    <action selector="snailButtonTouch:" destination="hpS-Py-sk1" eventType="touchUpInside" id="RYJ-IQ-1Rh"/>
+                                    <action selector="darthVaderButtonTouch:" destination="hpS-Py-sk1" eventType="touchUpInside" id="q3o-bW-JUP"/>
                                 </connections>
                             </button>
                             <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="VGS-FS-a8F">
@@ -151,20 +140,31 @@
                                 </constraints>
                                 <state key="normal" backgroundImage="fast2x-iphone.png"/>
                                 <connections>
-                                    <action selector="snailButtonTouch:" destination="hpS-Py-sk1" eventType="touchUpInside" id="TRZ-wI-ZGX"/>
+                                    <action selector="rabbitButtonTouch:" destination="hpS-Py-sk1" eventType="touchUpInside" id="KkH-sx-6Iy"/>
+                                </connections>
+                            </button>
+                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="O3H-lT-9dV">
+                                <rect key="frame" x="33" y="172" width="80" height="80"/>
+                                <constraints>
+                                    <constraint firstAttribute="height" constant="80" id="2ET-4V-6C3"/>
+                                    <constraint firstAttribute="width" constant="80" id="OLO-Rl-9K6"/>
+                                </constraints>
+                                <state key="normal" backgroundImage="slow2x-iphone.png"/>
+                                <connections>
+                                    <action selector="snailButtonTouch:" destination="hpS-Py-sk1" eventType="touchUpInside" id="VGO-jP-up9"/>
                                 </connections>
                             </button>
                         </subviews>
                         <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
                         <constraints>
-                            <constraint firstItem="aG2-sx-lw8" firstAttribute="centerX" secondItem="Pnh-tW-14J" secondAttribute="centerX" id="3UY-Uk-v9v"/>
+                            <constraint firstItem="VGS-FS-a8F" firstAttribute="top" secondItem="O3H-lT-9dV" secondAttribute="bottom" constant="3" id="0KT-Qd-SFA"/>
                             <constraint firstItem="aG2-sx-lw8" firstAttribute="centerY" secondItem="D03-bd-0en" secondAttribute="centerY" id="49B-I3-cPt"/>
                             <constraint firstItem="D03-bd-0en" firstAttribute="top" secondItem="VGS-FS-a8F" secondAttribute="bottom" constant="-1" id="7gn-lh-Dmj"/>
-                            <constraint firstItem="Pnh-tW-14J" firstAttribute="centerY" secondItem="cFN-te-zYW" secondAttribute="centerY" id="BSk-v4-6Oa"/>
+                            <constraint firstItem="VGS-FS-a8F" firstAttribute="leading" secondItem="aG2-sx-lw8" secondAttribute="trailing" constant="18" id="POJ-Gi-rV2"/>
                             <constraint firstItem="cFN-te-zYW" firstAttribute="leading" secondItem="VGS-FS-a8F" secondAttribute="trailing" constant="14" id="RTS-wo-bFR"/>
+                            <constraint firstItem="VGS-FS-a8F" firstAttribute="leading" secondItem="O3H-lT-9dV" secondAttribute="trailing" constant="18" id="TkC-6p-L3Q"/>
                             <constraint firstItem="VGS-FS-a8F" firstAttribute="centerX" secondItem="B01-4q-FRP" secondAttribute="centerX" id="ePM-e6-bfE"/>
-                            <constraint firstItem="VGS-FS-a8F" firstAttribute="leading" secondItem="Pnh-tW-14J" secondAttribute="trailing" constant="18" id="lG1-Py-mL1"/>
-                            <constraint firstItem="VGS-FS-a8F" firstAttribute="top" secondItem="Pnh-tW-14J" secondAttribute="bottom" constant="3" id="oHx-eo-Kol"/>
+                            <constraint firstItem="O3H-lT-9dV" firstAttribute="centerY" secondItem="cFN-te-zYW" secondAttribute="centerY" id="hdC-zR-WJa"/>
                             <constraint firstItem="VGS-FS-a8F" firstAttribute="centerY" secondItem="B01-4q-FRP" secondAttribute="centerY" id="pgO-Fh-x9k"/>
                             <constraint firstItem="D03-bd-0en" firstAttribute="centerX" secondItem="cFN-te-zYW" secondAttribute="centerX" id="usG-Jn-UJP"/>
                         </constraints>

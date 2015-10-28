@@ -14,11 +14,19 @@ class PlaySoundsViewController: UIViewController {
     var player2: AudioEngineHelper = AudioEngineHelper()
     
     @IBAction func snailButtonTouch(sender: UIButton) {
-//        if let model = pitchPerfectModel {
-//            player.play(model)
-//        }
+
+    }
+    
+    @IBAction func rabbitButtonTouch(sender: UIButton) {
         player2.playChipmunkSound()
-        
+    }
+    
+    @IBAction func squirellButtonTouch(sender: UIButton) {
+
+    }
+    
+    @IBAction func darthVaderButtonTouch(sender: UIButton) {
+
     }
     
     override func viewDidLoad() {
