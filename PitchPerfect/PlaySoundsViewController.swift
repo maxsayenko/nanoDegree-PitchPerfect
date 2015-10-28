@@ -14,26 +14,36 @@ class PlaySoundsViewController: UIViewController {
     @IBOutlet var stopButton: UIButton!
     
     @IBAction func snailButtonTouch(sender: UIButton) {
+        audioPlaying()
         player!.playSnailSound()
     }
     
     @IBAction func rabbitButtonTouch(sender: UIButton) {
+        audioPlaying()
         player!.playRabbitSound()
     }
     
     @IBAction func squirellButtonTouch(sender: UIButton) {
+        audioPlaying()
         player!.playChipmunkSound()
     }
     
     @IBAction func darthVaderButtonTouch(sender: UIButton) {
+        audioPlaying()
         player!.playDarthVaderSound()
     }
     
     @IBAction func stopButtonTouch(sender: UIButton) {
+        print("stop")
+        player?.stop()
+    }
+    
+    func audioPlaying() {
+        stopButton.enabled = true
     }
     
     func callback() {
-        print("Doneee")
+        stopButton.enabled = false
     }
     
     override func viewDidLoad() {

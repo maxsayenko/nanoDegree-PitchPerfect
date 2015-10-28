@@ -45,6 +45,11 @@ class AudioEngineHelper: NSObject, AVAudioPlayerDelegate {
         commonAudioFunction(-1000, typeOfChange: "pitch")
     }
     
+    func stop() {
+        audioEngine.stop()
+        audioEngine.reset()
+    }
+    
     func commonAudioFunction(audioChangeNumber: Float, typeOfChange: String){
         let audioPlayerNode = AVAudioPlayerNode()
 
@@ -89,9 +94,5 @@ class AudioEngineHelper: NSObject, AVAudioPlayerDelegate {
         }
         
         audioPlayerNode.play()
-    }
-    
-    func audioEngineCompletionHandler() -> Void {
-        print("audio engine finished playing")
     }
 }
