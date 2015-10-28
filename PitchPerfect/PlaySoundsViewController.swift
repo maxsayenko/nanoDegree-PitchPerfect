@@ -34,23 +34,21 @@ class PlaySoundsViewController: UIViewController {
     }
     
     @IBAction func stopButtonTouch(sender: UIButton) {
-        print("stop")
         player?.stop()
     }
     
     func callback() {
-        disableStopButton()
+        dispatch_async(dispatch_get_main_queue()) {
+            self.disableStopButton()
+        }
     }
     
     func disableStopButton() {
         stopButton.enabled = false
-        // Button doesn't change the state on the view
-        stopButton.alpha = 0.5
     }
     
     func enableStopButton() {
         stopButton.enabled = true
-        stopButton.alpha = 1
     }
     
     override func viewDidLoad() {
