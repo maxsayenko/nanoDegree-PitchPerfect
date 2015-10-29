@@ -2,7 +2,6 @@
 <document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="8191" systemVersion="14F27" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" initialViewController="4DW-Bj-Zvk">
     <dependencies>
         <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="8154"/>
-        <capability name="Aspect ratio constraints" minToolsVersion="5.1"/>
         <capability name="Constraints to layout margins" minToolsVersion="6.0"/>
     </dependencies>
     <scenes>
@@ -160,7 +159,7 @@
                                 </cells>
                                 <connections>
                                     <outlet property="dataSource" destination="BYZ-38-t0r" id="Avi-34-rNN"/>
-                                    <outlet property="delegate" destination="BYZ-38-t0r" id="9EI-14-3iV"/>
+                                    <outlet property="delegate" destination="BYZ-38-t0r" id="f8Z-5p-xUv"/>
                                 </connections>
                             </collectionView>
                         </subviews>
@@ -202,61 +201,8 @@
                         <rect key="frame" x="0.0" y="0.0" width="320" height="568"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <subviews>
-                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="aG2-sx-lw8">
-                                <rect key="frame" x="33" y="312" width="80" height="80"/>
-                                <constraints>
-                                    <constraint firstAttribute="height" constant="80" id="CAK-zZ-kCD"/>
-                                    <constraint firstAttribute="width" constant="80" id="XhX-RL-yLo"/>
-                                </constraints>
-                                <state key="normal" backgroundImage="chipmunk2x-iphone.png"/>
-                                <connections>
-                                    <action selector="squirellButtonTouch:" destination="hpS-Py-sk1" eventType="touchUpInside" id="WW2-id-vHd"/>
-                                </connections>
-                            </button>
-                            <button opaque="NO" contentMode="scaleToFill" restorationIdentifier="darthVaderButton" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="D03-bd-0en">
-                                <rect key="frame" x="203" y="312" width="80" height="80"/>
-                                <constraints>
-                                    <constraint firstAttribute="height" constant="80" id="AKU-ad-HBg"/>
-                                    <constraint firstAttribute="width" constant="80" id="cUR-oK-Qbz"/>
-                                </constraints>
-                                <state key="normal" backgroundImage="darthvader2x-iphone.png"/>
-                                <connections>
-                                    <action selector="darthVaderButtonTouch:" destination="hpS-Py-sk1" eventType="touchUpInside" id="q3o-bW-JUP"/>
-                                </connections>
-                            </button>
-                            <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="VGS-FS-a8F">
-                                <rect key="frame" x="131" y="255" width="58" height="58"/>
-                                <color key="backgroundColor" red="0.04875503019" green="0.66270380429999998" blue="0.00035361717880000001" alpha="1" colorSpace="calibratedRGB"/>
-                                <constraints>
-                                    <constraint firstAttribute="width" secondItem="VGS-FS-a8F" secondAttribute="height" multiplier="1:1" id="PUQ-0Y-eLn"/>
-                                    <constraint firstAttribute="height" constant="58" id="rA6-8e-Oxh"/>
-                                    <constraint firstAttribute="width" constant="58" id="xaB-h6-cny"/>
-                                </constraints>
-                            </view>
-                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="cFN-te-zYW">
-                                <rect key="frame" x="203" y="172" width="80" height="80"/>
-                                <constraints>
-                                    <constraint firstAttribute="width" constant="80" id="QkI-p7-K1w"/>
-                                    <constraint firstAttribute="height" constant="80" id="c3b-AM-LRx"/>
-                                </constraints>
-                                <state key="normal" backgroundImage="fast2x-iphone.png"/>
-                                <connections>
-                                    <action selector="rabbitButtonTouch:" destination="hpS-Py-sk1" eventType="touchUpInside" id="KkH-sx-6Iy"/>
-                                </connections>
-                            </button>
-                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="O3H-lT-9dV">
-                                <rect key="frame" x="33" y="172" width="80" height="80"/>
-                                <constraints>
-                                    <constraint firstAttribute="height" constant="80" id="2ET-4V-6C3"/>
-                                    <constraint firstAttribute="width" constant="80" id="OLO-Rl-9K6"/>
-                                </constraints>
-                                <state key="normal" backgroundImage="slow2x-iphone.png"/>
-                                <connections>
-                                    <action selector="snailButtonTouch:" destination="hpS-Py-sk1" eventType="touchUpInside" id="VGO-jP-up9"/>
-                                </connections>
-                            </button>
                             <button opaque="NO" contentMode="scaleToFill" enabled="NO" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="7Wo-nW-b7o">
-                                <rect key="frame" x="145" y="407" width="30" height="30"/>
+                                <rect key="frame" x="145" y="418" width="30" height="30"/>
                                 <constraints>
                                     <constraint firstAttribute="height" constant="30" id="24S-T6-Lfi"/>
                                     <constraint firstAttribute="width" constant="30" id="Sgi-Ze-6eJ"/>
@@ -266,26 +212,195 @@
                                     <action selector="stopButtonTouch:" destination="hpS-Py-sk1" eventType="touchUpInside" id="1a5-Qk-dMC"/>
                                 </connections>
                             </button>
+                            <collectionView clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="scaleToFill" dataMode="prototypes" translatesAutoresizingMaskIntoConstraints="NO" id="Udw-Tq-xW9">
+                                <rect key="frame" x="12" y="100" width="296" height="299"/>
+                                <color key="backgroundColor" red="0.80000000000000004" green="1" blue="0.20000000000000001" alpha="1" colorSpace="calibratedRGB"/>
+                                <constraints>
+                                    <constraint firstAttribute="height" constant="299" id="28r-3N-qB3"/>
+                                </constraints>
+                                <collectionViewFlowLayout key="collectionViewLayout" minimumLineSpacing="10" minimumInteritemSpacing="10" id="Ece-Pw-nMl">
+                                    <size key="itemSize" width="90" height="90"/>
+                                    <size key="headerReferenceSize" width="0.0" height="0.0"/>
+                                    <size key="footerReferenceSize" width="0.0" height="0.0"/>
+                                    <inset key="sectionInset" minX="20" minY="0.0" maxX="20" maxY="0.0"/>
+                                </collectionViewFlowLayout>
+                                <cells>
+                                    <collectionViewCell opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" reuseIdentifier="cell0" id="ZBK-Pi-6Z5">
+                                        <rect key="frame" x="20" y="0.0" width="90" height="90"/>
+                                        <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                                        <view key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center">
+                                            <rect key="frame" x="0.0" y="0.0" width="90" height="90"/>
+                                            <autoresizingMask key="autoresizingMask"/>
+                                            <subviews>
+                                                <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="O3H-lT-9dV">
+                                                    <rect key="frame" x="5" y="5" width="80" height="80"/>
+                                                    <constraints>
+                                                        <constraint firstAttribute="height" constant="80" id="2ET-4V-6C3"/>
+                                                        <constraint firstAttribute="width" constant="80" id="OLO-Rl-9K6"/>
+                                                    </constraints>
+                                                    <state key="normal" backgroundImage="slow2x-iphone.png"/>
+                                                    <connections>
+                                                        <action selector="snailButtonTouch:" destination="hpS-Py-sk1" eventType="touchUpInside" id="VGO-jP-up9"/>
+                                                    </connections>
+                                                </button>
+                                            </subviews>
+                                            <color key="backgroundColor" white="0.0" alpha="0.0" colorSpace="calibratedWhite"/>
+                                        </view>
+                                        <constraints>
+                                            <constraint firstItem="O3H-lT-9dV" firstAttribute="centerY" secondItem="ZBK-Pi-6Z5" secondAttribute="centerY" id="3hY-gI-Qg3"/>
+                                            <constraint firstItem="O3H-lT-9dV" firstAttribute="centerX" secondItem="ZBK-Pi-6Z5" secondAttribute="centerX" id="q2i-Rx-nCb"/>
+                                        </constraints>
+                                    </collectionViewCell>
+                                    <collectionViewCell opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" reuseIdentifier="cell1" id="Rig-Mf-GU4">
+                                        <rect key="frame" x="186" y="0.0" width="90" height="90"/>
+                                        <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                                        <view key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center">
+                                            <rect key="frame" x="0.0" y="0.0" width="90" height="90"/>
+                                            <autoresizingMask key="autoresizingMask"/>
+                                            <subviews>
+                                                <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="cFN-te-zYW">
+                                                    <rect key="frame" x="5" y="5" width="80" height="80"/>
+                                                    <constraints>
+                                                        <constraint firstAttribute="width" constant="80" id="QkI-p7-K1w"/>
+                                                        <constraint firstAttribute="height" constant="80" id="c3b-AM-LRx"/>
+                                                    </constraints>
+                                                    <state key="normal" backgroundImage="fast2x-iphone.png"/>
+                                                    <connections>
+                                                        <action selector="rabbitButtonTouch:" destination="hpS-Py-sk1" eventType="touchUpInside" id="KkH-sx-6Iy"/>
+                                                    </connections>
+                                                </button>
+                                            </subviews>
+                                            <color key="backgroundColor" white="0.0" alpha="0.0" colorSpace="calibratedWhite"/>
+                                        </view>
+                                        <constraints>
+                                            <constraint firstItem="cFN-te-zYW" firstAttribute="centerX" secondItem="Rig-Mf-GU4" secondAttribute="centerX" id="LrV-20-Css"/>
+                                            <constraint firstItem="cFN-te-zYW" firstAttribute="centerY" secondItem="Rig-Mf-GU4" secondAttribute="centerY" id="WAQ-tY-U0H"/>
+                                        </constraints>
+                                    </collectionViewCell>
+                                    <collectionViewCell opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" reuseIdentifier="cell2" id="oAu-nk-Cre">
+                                        <rect key="frame" x="20" y="100" width="90" height="90"/>
+                                        <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                                        <view key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center">
+                                            <rect key="frame" x="0.0" y="0.0" width="90" height="90"/>
+                                            <autoresizingMask key="autoresizingMask"/>
+                                            <subviews>
+                                                <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="aG2-sx-lw8">
+                                                    <rect key="frame" x="5" y="5" width="80" height="80"/>
+                                                    <constraints>
+                                                        <constraint firstAttribute="height" constant="80" id="CAK-zZ-kCD"/>
+                                                        <constraint firstAttribute="width" constant="80" id="XhX-RL-yLo"/>
+                                                    </constraints>
+                                                    <state key="normal" backgroundImage="chipmunk2x-iphone.png"/>
+                                                    <connections>
+                                                        <action selector="squirellButtonTouch:" destination="hpS-Py-sk1" eventType="touchUpInside" id="WW2-id-vHd"/>
+                                                    </connections>
+                                                </button>
+                                            </subviews>
+                                            <color key="backgroundColor" white="0.0" alpha="0.0" colorSpace="calibratedWhite"/>
+                                        </view>
+                                        <constraints>
+                                            <constraint firstItem="aG2-sx-lw8" firstAttribute="centerY" secondItem="oAu-nk-Cre" secondAttribute="centerY" id="EuB-Fk-sUy"/>
+                                            <constraint firstItem="aG2-sx-lw8" firstAttribute="centerX" secondItem="oAu-nk-Cre" secondAttribute="centerX" id="a2m-rj-I5r"/>
+                                        </constraints>
+                                    </collectionViewCell>
+                                    <collectionViewCell opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" reuseIdentifier="cell3" id="NXx-Bc-FVM">
+                                        <rect key="frame" x="186" y="100" width="90" height="90"/>
+                                        <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                                        <view key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center">
+                                            <rect key="frame" x="0.0" y="0.0" width="90" height="90"/>
+                                            <autoresizingMask key="autoresizingMask"/>
+                                            <subviews>
+                                                <button opaque="NO" contentMode="scaleToFill" restorationIdentifier="darthVaderButton" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="D03-bd-0en">
+                                                    <rect key="frame" x="5" y="5" width="80" height="80"/>
+                                                    <constraints>
+                                                        <constraint firstAttribute="height" constant="80" id="AKU-ad-HBg"/>
+                                                        <constraint firstAttribute="width" constant="80" id="cUR-oK-Qbz"/>
+                                                    </constraints>
+                                                    <state key="normal" backgroundImage="darthvader2x-iphone.png"/>
+                                                    <connections>
+                                                        <action selector="darthVaderButtonTouch:" destination="hpS-Py-sk1" eventType="touchUpInside" id="q3o-bW-JUP"/>
+                                                    </connections>
+                                                </button>
+                                            </subviews>
+                                            <color key="backgroundColor" white="0.0" alpha="0.0" colorSpace="calibratedWhite"/>
+                                        </view>
+                                        <constraints>
+                                            <constraint firstItem="D03-bd-0en" firstAttribute="centerY" secondItem="NXx-Bc-FVM" secondAttribute="centerY" id="AQi-kx-jBg"/>
+                                            <constraint firstItem="D03-bd-0en" firstAttribute="centerX" secondItem="NXx-Bc-FVM" secondAttribute="centerX" id="BP4-Ao-8r4"/>
+                                        </constraints>
+                                    </collectionViewCell>
+                                    <collectionViewCell opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" reuseIdentifier="cell4" id="zWQ-Dr-kZq">
+                                        <rect key="frame" x="20" y="200" width="90" height="90"/>
+                                        <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                                        <view key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center">
+                                            <rect key="frame" x="0.0" y="0.0" width="90" height="90"/>
+                                            <autoresizingMask key="autoresizingMask"/>
+                                            <subviews>
+                                                <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="Eff-uZ-kJo">
+                                                    <rect key="frame" x="5" y="5" width="80" height="80"/>
+                                                    <constraints>
+                                                        <constraint firstAttribute="width" constant="80" id="29X-qd-fkF"/>
+                                                        <constraint firstAttribute="height" constant="80" id="wfx-o6-eLo"/>
+                                                    </constraints>
+                                                    <state key="normal" backgroundImage="echo.png"/>
+                                                    <connections>
+                                                        <action selector="echoButtonTouch:" destination="hpS-Py-sk1" eventType="touchUpInside" id="RZR-80-1Lk"/>
+                                                    </connections>
+                                                </button>
+                                            </subviews>
+                                            <color key="backgroundColor" white="0.0" alpha="0.0" colorSpace="calibratedWhite"/>
+                                        </view>
+                                        <constraints>
+                                            <constraint firstItem="Eff-uZ-kJo" firstAttribute="centerX" secondItem="zWQ-Dr-kZq" secondAttribute="centerX" id="4t5-OA-9Wa"/>
+                                            <constraint firstItem="Eff-uZ-kJo" firstAttribute="centerY" secondItem="zWQ-Dr-kZq" secondAttribute="centerY" id="mu4-5u-e78"/>
+                                        </constraints>
+                                    </collectionViewCell>
+                                    <collectionViewCell opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" reuseIdentifier="cell5" id="iWT-XU-jUd">
+                                        <rect key="frame" x="186" y="200" width="90" height="90"/>
+                                        <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                                        <view key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center">
+                                            <rect key="frame" x="0.0" y="0.0" width="90" height="90"/>
+                                            <autoresizingMask key="autoresizingMask"/>
+                                            <subviews>
+                                                <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="uGQ-fv-eG6">
+                                                    <rect key="frame" x="5" y="5" width="80" height="80"/>
+                                                    <constraints>
+                                                        <constraint firstAttribute="height" constant="80" id="OPS-tD-6cE"/>
+                                                        <constraint firstAttribute="width" constant="80" id="rk7-r1-9gn"/>
+                                                    </constraints>
+                                                    <state key="normal" backgroundImage="reverb.png"/>
+                                                    <connections>
+                                                        <action selector="reverbButtonTouch:" destination="hpS-Py-sk1" eventType="touchUpInside" id="49f-b7-A75"/>
+                                                    </connections>
+                                                </button>
+                                            </subviews>
+                                            <color key="backgroundColor" white="0.0" alpha="0.0" colorSpace="calibratedWhite"/>
+                                        </view>
+                                        <constraints>
+                                            <constraint firstItem="uGQ-fv-eG6" firstAttribute="centerX" secondItem="iWT-XU-jUd" secondAttribute="centerX" id="iEF-mB-WSe"/>
+                                            <constraint firstItem="uGQ-fv-eG6" firstAttribute="centerY" secondItem="iWT-XU-jUd" secondAttribute="centerY" id="vzB-Jb-9Cm"/>
+                                        </constraints>
+                                    </collectionViewCell>
+                                </cells>
+                                <connections>
+                                    <outlet property="dataSource" destination="hpS-Py-sk1" id="N3V-Ar-uOc"/>
+                                    <outlet property="delegate" destination="hpS-Py-sk1" id="u2A-1Q-rT2"/>
+                                </connections>
+                            </collectionView>
                         </subviews>
                         <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
                         <constraints>
-                            <constraint firstItem="VGS-FS-a8F" firstAttribute="top" secondItem="O3H-lT-9dV" secondAttribute="bottom" constant="3" id="0KT-Qd-SFA"/>
-                            <constraint firstItem="aG2-sx-lw8" firstAttribute="centerY" secondItem="D03-bd-0en" secondAttribute="centerY" id="49B-I3-cPt"/>
-                            <constraint firstItem="D03-bd-0en" firstAttribute="top" secondItem="VGS-FS-a8F" secondAttribute="bottom" constant="-1" id="7gn-lh-Dmj"/>
-                            <constraint firstItem="VGS-FS-a8F" firstAttribute="leading" secondItem="aG2-sx-lw8" secondAttribute="trailing" constant="18" id="POJ-Gi-rV2"/>
-                            <constraint firstItem="cFN-te-zYW" firstAttribute="leading" secondItem="VGS-FS-a8F" secondAttribute="trailing" constant="14" id="RTS-wo-bFR"/>
-                            <constraint firstItem="VGS-FS-a8F" firstAttribute="leading" secondItem="O3H-lT-9dV" secondAttribute="trailing" constant="18" id="TkC-6p-L3Q"/>
-                            <constraint firstItem="VGS-FS-a8F" firstAttribute="centerX" secondItem="B01-4q-FRP" secondAttribute="centerX" id="ePM-e6-bfE"/>
-                            <constraint firstItem="O3H-lT-9dV" firstAttribute="centerY" secondItem="cFN-te-zYW" secondAttribute="centerY" id="hdC-zR-WJa"/>
+                            <constraint firstAttribute="trailingMargin" secondItem="Udw-Tq-xW9" secondAttribute="trailing" constant="-4" id="G16-Xu-xMA"/>
+                            <constraint firstItem="7Wo-nW-b7o" firstAttribute="top" secondItem="Udw-Tq-xW9" secondAttribute="bottom" constant="19" id="R2X-Og-tts"/>
+                            <constraint firstAttribute="leadingMargin" secondItem="Udw-Tq-xW9" secondAttribute="leading" constant="4" id="TjK-3K-sJG"/>
+                            <constraint firstItem="Udw-Tq-xW9" firstAttribute="top" secondItem="cYp-TI-I5J" secondAttribute="bottom" constant="36" id="bex-Gv-9nW"/>
                             <constraint firstItem="7Wo-nW-b7o" firstAttribute="centerX" secondItem="B01-4q-FRP" secondAttribute="centerX" id="mFa-OW-NOq"/>
-                            <constraint firstItem="7Wo-nW-b7o" firstAttribute="top" secondItem="D03-bd-0en" secondAttribute="bottom" constant="15" id="opw-TA-9eB"/>
-                            <constraint firstItem="VGS-FS-a8F" firstAttribute="centerY" secondItem="B01-4q-FRP" secondAttribute="centerY" id="pgO-Fh-x9k"/>
-                            <constraint firstItem="D03-bd-0en" firstAttribute="centerX" secondItem="cFN-te-zYW" secondAttribute="centerX" id="usG-Jn-UJP"/>
                         </constraints>
                     </view>
                     <navigationItem key="navigationItem" title="Play" id="nPS-Ns-uHB"/>
                     <connections>
                         <outlet property="stopButton" destination="7Wo-nW-b7o" id="Rg3-ZA-bj0"/>
+                        <outlet property="tableForButtons" destination="Udw-Tq-xW9" id="IA9-e4-IUq"/>
                     </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="16K-XD-lxq" userLabel="First Responder" sceneMemberID="firstResponder"/>
@@ -296,8 +411,10 @@
     <resources>
         <image name="chipmunk2x-iphone.png" width="200" height="200"/>
         <image name="darthvader2x-iphone.png" width="200" height="200"/>
+        <image name="echo.png" width="160" height="160"/>
         <image name="fast2x-iphone.png" width="200" height="200"/>
         <image name="microphone2x-iphone.png" width="200" height="200"/>
+        <image name="reverb.png" width="160" height="160"/>
         <image name="slow2x-iphone.png" width="200" height="200"/>
         <image name="stop2x-iphone.png" width="100" height="100"/>
     </resources>
