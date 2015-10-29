@@ -82,7 +82,7 @@
                     <connections>
                         <outlet property="recordLabel" destination="cLH-dM-BXl" id="SvY-Wp-Ffx"/>
                         <outlet property="stopButton" destination="Q1o-Sb-0Ud" id="MHw-IZ-aLZ"/>
-                        <segue destination="hpS-Py-sk1" kind="push" id="Rmk-f5-gnT"/>
+                        <segue destination="hpS-Py-sk1" kind="push" identifier="showPlaySoundsView" id="Rmk-f5-gnT"/>
                     </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="dkx-z0-nzr" sceneMemberID="firstResponder"/>

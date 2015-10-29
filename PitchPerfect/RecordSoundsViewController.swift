@@ -23,16 +23,18 @@ class RecordSoundsViewController: UIViewController, AVAudioRecorderDelegate, AVA
     
     @IBAction func recordButtonTouch(sender: UIButton) {
         switch recordState {
+        // Start recording
         case .Stopped:
             recorder.recordWithPermission(setup: true, doneRecordingCallback: doneRecordingCallback)
             recordLabel.text = textRecording
             stopButton.hidden = false
             recordState = .Recording
+        // Pause recording
         case .Recording:
-            // add animation or pause button here
             recorder.pause()
             recordLabel.text = textResume
             recordState = .Paused
+        // Resume from Pause
         case .Paused:
             recorder.resume()
             recordLabel.text = textRecording
@@ -43,10 +45,7 @@ class RecordSoundsViewController: UIViewController, AVAudioRecorderDelegate, AVA
     func doneRecordingCallback(url: NSURL) -> Void {
         print("doneRecordingCallback = \(url)")
         pitchPerfectModel.audioUrl = url
-        
-        let playSoundsViewController = self.storyboard?.instantiateViewControllerWithIdentifier("playSoundsView") as! PlaySoundsViewController
-        playSoundsViewController.pitchPerfectModel = pitchPerfectModel
-        self.navigationController?.pushViewController(playSoundsViewController, animated: true)
+        self.performSegueWithIdentifier("showPlaySoundsView", sender: self)
     }
     
     @IBAction func stopButtonTouch(sender: UIButton) {
@@ -60,6 +59,14 @@ class RecordSoundsViewController: UIViewController, AVAudioRecorderDelegate, AVA
         stopButton.hidden = true
         recordState = .Stopped
         super.viewWillAppear(animated)
+    }
+    
+    override func prepareForSegue(segue: UIStoryboardSegue, sender: AnyObject?) {
+        print("prepareForSegue")
+        if(segue.identifier == "showPlaySoundsView") {
+            let playSoundsViewController = (segue.destinationViewController as! PlaySoundsViewController)
+            playSoundsViewController.pitchPerfectModel = pitchPerfectModel
+        }
     }
     
     override func viewDidLoad() {
