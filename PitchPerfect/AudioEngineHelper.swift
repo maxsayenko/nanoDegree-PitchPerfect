@@ -46,13 +46,11 @@ class AudioEngineHelper: NSObject, AVAudioPlayerDelegate {
     }
     
     func playEcho() {
+        self.stop()
         let echoNode = AVAudioUnitDelay()
         echoNode.delayTime = NSTimeInterval(0.3)
         
         let audioPlayerNode = AVAudioPlayerNode()
-        audioPlayerNode.stop()
-        self.stop()
-        
         audioEngine.attachNode(audioPlayerNode)
         
         // Attach the audio effect node corresponding to the user selected effect
@@ -63,11 +61,25 @@ class AudioEngineHelper: NSObject, AVAudioPlayerDelegate {
         // Connect AudioEffect --> Output
         audioEngine.connect(echoNode, to: audioEngine.outputNode, format: audioFile.processingFormat)
         
-        //audioPlayerNode.scheduleFile(audioFile, atTime: nil, completionHandler:nil)
+        outputAudio(audioPlayerNode)
+    }
+    
+    func playReverb() {
+        self.stop()
+        let reverbNode = AVAudioUnitReverb()
+        reverbNode.loadFactoryPreset(AVAudioUnitReverbPreset.Cathedral)
+        reverbNode.wetDryMix = 60
         
-       // audioEngine.startAndReturnError(nil)
+        let audioPlayerNode = AVAudioPlayerNode()
+        audioEngine.attachNode(audioPlayerNode)
         
-        //audioPlayerNode.play()
+        // Attach the audio effect node corresponding to the user selected effect
+        audioEngine.attachNode(reverbNode)
+        
+        // Connect Player --> AudioEffect
+        audioEngine.connect(audioPlayerNode, to: reverbNode, format: audioFile.processingFormat)
+        // Connect AudioEffect --> Output
+        audioEngine.connect(reverbNode, to: audioEngine.outputNode, format: audioFile.processingFormat)
         
         outputAudio(audioPlayerNode)
     }
@@ -78,12 +90,8 @@ class AudioEngineHelper: NSObject, AVAudioPlayerDelegate {
     }
     
     private func commonAudioFunction(audioChangeNumber: Float, typeOfChange: String) {
-        let audioPlayerNode = AVAudioPlayerNode()
-
-        // Stopping all current processes
-        audioPlayerNode.stop()
         self.stop()
-        
+        let audioPlayerNode = AVAudioPlayerNode()
         audioEngine.attachNode(audioPlayerNode)
         
         let changeAudioUnitTime = AVAudioUnitTimePitch()
@@ -99,30 +107,6 @@ class AudioEngineHelper: NSObject, AVAudioPlayerDelegate {
         audioEngine.connect(changeAudioUnitTime, to: audioEngine.outputNode, format: nil)
         
         outputAudio(audioPlayerNode)
-        
-//        // Scheduling file to play. Had to convert it to buffer as in 'scheduleFile' function completionHandler didn't fire correctly
-//        do {
-//            // Converting file to buffer
-//            let file: AVAudioFile = try AVAudioFile(forReading: audioFile.url)
-//            let buffer = AVAudioPCMBuffer(PCMFormat: file.processingFormat, frameCapacity: UInt32(file.length))
-//            try file.readIntoBuffer(buffer)
-//            //  Scheduling buffer
-//            audioPlayerNode.scheduleBuffer(buffer, completionHandler: finishPlayingCallback)
-//        }
-//        catch let error {
-//            print("Playing Error")
-//            print(error)
-//        }
-//        
-//        do {
-//           try audioEngine.start()
-//        }
-//        catch let error {
-//            print("Audio Engine StartError")
-//            print(error)
-//        }
-//        
-//        audioPlayerNode.play()
     }
     
     private func outputAudio(playerNode: AVAudioPlayerNode) {
