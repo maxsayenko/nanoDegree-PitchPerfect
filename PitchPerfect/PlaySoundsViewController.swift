@@ -69,16 +69,12 @@ class PlaySoundsViewController: UIViewController {
     }
     
     override func viewDidLoad() {
-        print("View did load \(pitchPerfectModel == nil)")
         player = AudioEngineHelper(model: pitchPerfectModel!, finishPlayingCallback: callback)
-        stopButton.enabled = false
+        disableStopButton()
         super.viewDidLoad()
         // Do any additional setup after loading the view, typically from a nib.
     }
 }
-
-
-
 
 extension PlaySoundsViewController : UICollectionViewDataSource, UICollectionViewDelegateFlowLayout {
     func collectionView(collectionView: UICollectionView, layout collectionViewLayout: UICollectionViewLayout, sizeForItemAtIndexPath indexPath: NSIndexPath) -> CGSize
@@ -92,10 +88,6 @@ extension PlaySoundsViewController : UICollectionViewDataSource, UICollectionVie
     func collectionView(collectionView: UICollectionView, cellForItemAtIndexPath indexPath: NSIndexPath) -> UICollectionViewCell {
         let cellIdentifier = "cell\(indexPath.item)"
         let cell = collectionView.dequeueReusableCellWithReuseIdentifier(cellIdentifier, forIndexPath: indexPath)
-        
-        cell.backgroundColor = UIColor.blackColor()
-        
-        // Configure the cell
         return cell
     }
     
@@ -105,7 +97,13 @@ extension PlaySoundsViewController : UICollectionViewDataSource, UICollectionVie
     
     override func traitCollectionDidChange(previousTraitCollection: UITraitCollection?) {
         super.traitCollectionDidChange(previousTraitCollection)
-        cellsPerRow = (traitCollection.verticalSizeClass == .Compact) ? 3 : 2
+        if (traitCollection.verticalSizeClass == .Compact) {
+            cellsPerRow = 3
+        }
+        else {
+            cellsPerRow = 2
+        }
+        tableForButtons.frame.size.height = 100
         tableForButtons.reloadData()
     }
 }

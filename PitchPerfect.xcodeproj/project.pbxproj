@@ -7,6 +7,7 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
+		E28B5F9F1BE21D6D0099255B /* pause_200_blue.png in Resources */ = {isa = PBXBuildFile; fileRef = E28B5F9E1BE21D6D0099255B /* pause_200_blue.png */; settings = {ASSET_TAGS = (); }; };
 		E299702B1BD6AFF400F679B1 /* PlaySoundsViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = E299702A1BD6AFF400F679B1 /* PlaySoundsViewController.swift */; settings = {ASSET_TAGS = (); }; };
 		E2C2A35F1BDF5D0300100394 /* AudioEngineHelper.swift in Sources */ = {isa = PBXBuildFile; fileRef = E2C2A35E1BDF5D0300100394 /* AudioEngineHelper.swift */; settings = {ASSET_TAGS = (); }; };
 		E2C2A3611BDF6B9E00100394 /* RecordState.swift in Sources */ = {isa = PBXBuildFile; fileRef = E2C2A3601BDF6B9E00100394 /* RecordState.swift */; settings = {ASSET_TAGS = (); }; };
@@ -30,6 +31,7 @@
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
+		E28B5F9E1BE21D6D0099255B /* pause_200_blue.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = pause_200_blue.png; sourceTree = "<group>"; };
 		E299702A1BD6AFF400F679B1 /* PlaySoundsViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = PlaySoundsViewController.swift; sourceTree = "<group>"; };
 		E2C2A35E1BDF5D0300100394 /* AudioEngineHelper.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = AudioEngineHelper.swift; sourceTree = "<group>"; };
 		E2C2A3601BDF6B9E00100394 /* RecordState.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = RecordState.swift; sourceTree = "<group>"; };
@@ -100,6 +102,7 @@
 		E2E50FEB1BD62AC700FDCD31 /* images */ = {
 			isa = PBXGroup;
 			children = (
+				E28B5F9E1BE21D6D0099255B /* pause_200_blue.png */,
 				E2FB03D51BD75D0B00B281A5 /* chipmunk2x-iphone.png */,
 				E2FB03D61BD75D0B00B281A5 /* darthvader2x-iphone.png */,
 				E2FB03D71BD75D0B00B281A5 /* echo.png */,
@@ -205,6 +208,7 @@
 				E2E50FEF1BD62AE500FDCD31 /* stop2x-iphone.png in Resources */,
 				E2E50FE11BD6289800FDCD31 /* Assets.xcassets in Resources */,
 				E2E50FDF1BD6289800FDCD31 /* Main.storyboard in Resources */,
+				E28B5F9F1BE21D6D0099255B /* pause_200_blue.png in Resources */,
 				E2FB03DE1BD75D0B00B281A5 /* fast2x-iphone.png in Resources */,
 				E2FB03E01BD75D0B00B281A5 /* slow2x-iphone.png in Resources */,
 				E2FB03DB1BD75D0B00B281A5 /* chipmunk2x-iphone.png in Resources */,

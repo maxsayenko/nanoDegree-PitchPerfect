@@ -10,11 +10,6 @@ import UIKit
 import AVFoundation
 
 class RecordSoundsViewController: UIViewController, AVAudioRecorderDelegate, AVAudioPlayerDelegate {
-    var cellsPerRow: CGFloat = 2
-    let cellPadding: CGFloat = 5
-    
-    @IBOutlet var collectionView: UICollectionView!
-    
     let textRecording = "Recording!"
     let textRecord = "Tap to record!"
     let textResume = "Resume!"
@@ -24,6 +19,7 @@ class RecordSoundsViewController: UIViewController, AVAudioRecorderDelegate, AVA
     let pitchPerfectModel = PitchPerfectModel()
     
     @IBOutlet var recordLabel: UILabel!
+    @IBOutlet var recordButton: UIButton!
     @IBOutlet var stopButton: UIButton!
     
     @IBAction func recordButtonTouch(sender: UIButton) {
@@ -82,51 +78,5 @@ class RecordSoundsViewController: UIViewController, AVAudioRecorderDelegate, AVA
     override func didReceiveMemoryWarning() {
         super.didReceiveMemoryWarning()
         // Dispose of any resources that can be recreated.
-    }
-}
-
-
-extension RecordSoundsViewController : UICollectionViewDataSource, UICollectionViewDelegateFlowLayout {
-    func collectionView(collectionView: UICollectionView, layout collectionViewLayout: UICollectionViewLayout, sizeForItemAtIndexPath indexPath: NSIndexPath) -> CGSize
-    {
-        
-//        let widthMinusPadding = UIScreen.mainScreen().bounds.width - (cellPadding + cellPadding * cellsPerRow)
-//        let eachSide = widthMinusPadding / cellsPerRow
-//        print("Size. Width =  \(eachSide)")
-//        
-//        return CGSize(width: eachSide, height: eachSide)
-        
-        //let numberOfCellsPerRow : CGFloat = 2.0
-        let minGapBetweenCells : CGFloat = 10.0
-        let totalSpaceBetweenCells : CGFloat = (cellsPerRow - 1) * minGapBetweenCells
-        let cellWidth : CGFloat = (collectionView.frame.size.width - totalSpaceBetweenCells) / cellsPerRow
-        
-        return CGSize(width: cellWidth, height: 20)
-    }
-    
-    func collectionView(collectionView: UICollectionView, cellForItemAtIndexPath indexPath: NSIndexPath) -> UICollectionViewCell {
-        let cellIdentifier = "cell\(indexPath.item)"
-        let cell = collectionView.dequeueReusableCellWithReuseIdentifier(cellIdentifier, forIndexPath: indexPath)
-        cell.backgroundColor = UIColor.blackColor()
-        // Configure the cell
-        return cell
-    }
-    
-    func collectionView(collectionView: UICollectionView, numberOfItemsInSection section: Int) -> Int {
-        return 6
-    }
-    
-    @IBAction func secondButton(sender: AnyObject) {
-        print("2")
-    }
-    @IBAction func first(sender: AnyObject) {
-        print("1")
-    }
-    
-    override func traitCollectionDidChange(previousTraitCollection: UITraitCollection?) {
-        print("Rotating \(traitCollection.verticalSizeClass)")
-        super.traitCollectionDidChange(previousTraitCollection)
-        cellsPerRow = (traitCollection.verticalSizeClass == .Compact) ? 3 : 2
-        collectionView.reloadData()
     }
 }
