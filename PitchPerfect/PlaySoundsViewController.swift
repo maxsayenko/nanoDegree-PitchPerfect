@@ -22,30 +22,33 @@ class PlaySoundsViewController: UIViewController {
     
     @IBAction func snailButtonTouch(sender: UIButton) {
         enableStopButton()
-        player!.playSnailSound()
+        player?.playSnailSound()
     }
     
     @IBAction func rabbitButtonTouch(sender: UIButton) {
         enableStopButton()
-        player!.playRabbitSound()
+        player?.playRabbitSound()
     }
     
     @IBAction func squirellButtonTouch(sender: UIButton) {
         enableStopButton()
-        player!.playChipmunkSound()
+        player?.playChipmunkSound()
     }
     
     @IBAction func darthVaderButtonTouch(sender: UIButton) {
         enableStopButton()
-        player!.playDarthVaderSound()
+        player?.playDarthVaderSound()
     }
     
     @IBAction func echoButtonTouch(sender: UIButton) {
+        enableStopButton()
+        player?.playEcho()
     }
     
     @IBAction func reverbButtonTouch(sender: UIButton) {
+        enableStopButton()
+        player?.playReverb()
     }
-    
     
     @IBAction func stopButtonTouch(sender: UIButton) {
         player?.stop()
@@ -67,7 +70,7 @@ class PlaySoundsViewController: UIViewController {
     
     override func viewDidLoad() {
         print("View did load \(pitchPerfectModel == nil)")
-        //player = AudioEngineHelper(model: pitchPerfectModel!, finishPlayingCallback: callback)
+        player = AudioEngineHelper(model: pitchPerfectModel!, finishPlayingCallback: callback)
         stopButton.enabled = false
         super.viewDidLoad()
         // Do any additional setup after loading the view, typically from a nib.
@@ -80,24 +83,9 @@ class PlaySoundsViewController: UIViewController {
 extension PlaySoundsViewController : UICollectionViewDataSource, UICollectionViewDelegateFlowLayout {
     func collectionView(collectionView: UICollectionView, layout collectionViewLayout: UICollectionViewLayout, sizeForItemAtIndexPath indexPath: NSIndexPath) -> CGSize
     {
-//        let cellIdentifier = "cell\(indexPath.item)"
-//        let cell = collectionView.dequeueReusableCellWithReuseIdentifier(cellIdentifier, forIndexPath: indexPath)
-
-        
-//        print(collectionView.cellForItemAtIndexPath(indexPath)?.frame.height)
-//        print(indexPath)
-        //        let widthMinusPadding = UIScreen.mainScreen().bounds.width - (cellPadding + cellPadding * cellsPerRow)
-        //        let eachSide = widthMinusPadding / cellsPerRow
-        //        print("Size. Width =  \(eachSide)")
-        //
-        //        return CGSize(width: eachSide, height: eachSide)
-        
-        //let numberOfCellsPerRow : CGFloat = 2.0
         let minGapBetweenCells : CGFloat = 10.0
         let totalSpaceBetweenCells : CGFloat = ((cellsPerRow - 1) * minGapBetweenCells) + 40
-        print("total space = \(totalSpaceBetweenCells)")
         let cellWidth : CGFloat = (collectionView.frame.size.width - totalSpaceBetweenCells) / cellsPerRow
-        print("Collection width =\(collectionView.frame.size.width)  & cellWidth = \(cellWidth) & cellsPerRow = \(cellsPerRow)")
         return CGSize(width: cellWidth, height: 90)
     }
     
@@ -115,18 +103,9 @@ extension PlaySoundsViewController : UICollectionViewDataSource, UICollectionVie
         return 6
     }
     
-    @IBAction func secondButton(sender: AnyObject) {
-        print("2")
-    }
-    @IBAction func first(sender: AnyObject) {
-        print("1")
-    }
-    
     override func traitCollectionDidChange(previousTraitCollection: UITraitCollection?) {
-        print("Rotating \(traitCollection.verticalSizeClass.rawValue)")
         super.traitCollectionDidChange(previousTraitCollection)
         cellsPerRow = (traitCollection.verticalSizeClass == .Compact) ? 3 : 2
-        print("cells per row = \(cellsPerRow)")
         tableForButtons.reloadData()
     }
 }
