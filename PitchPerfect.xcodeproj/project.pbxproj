@@ -27,7 +27,6 @@
 		E2FB03DE1BD75D0B00B281A5 /* fast2x-iphone.png in Resources */ = {isa = PBXBuildFile; fileRef = E2FB03D81BD75D0B00B281A5 /* fast2x-iphone.png */; settings = {ASSET_TAGS = (); }; };
 		E2FB03DF1BD75D0B00B281A5 /* reverb.png in Resources */ = {isa = PBXBuildFile; fileRef = E2FB03D91BD75D0B00B281A5 /* reverb.png */; settings = {ASSET_TAGS = (); }; };
 		E2FB03E01BD75D0B00B281A5 /* slow2x-iphone.png in Resources */ = {isa = PBXBuildFile; fileRef = E2FB03DA1BD75D0B00B281A5 /* slow2x-iphone.png */; settings = {ASSET_TAGS = (); }; };
-		E2FB03E21BD7782400B281A5 /* AudioHelper.swift in Sources */ = {isa = PBXBuildFile; fileRef = E2FB03E11BD7782400B281A5 /* AudioHelper.swift */; settings = {ASSET_TAGS = (); }; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
@@ -53,7 +52,6 @@
 		E2FB03D81BD75D0B00B281A5 /* fast2x-iphone.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "fast2x-iphone.png"; sourceTree = "<group>"; };
 		E2FB03D91BD75D0B00B281A5 /* reverb.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = reverb.png; sourceTree = "<group>"; };
 		E2FB03DA1BD75D0B00B281A5 /* slow2x-iphone.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "slow2x-iphone.png"; sourceTree = "<group>"; };
-		E2FB03E11BD7782400B281A5 /* AudioHelper.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = AudioHelper.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -127,7 +125,6 @@
 		E2EBF1971BD8B79D000C66C1 /* Helpers */ = {
 			isa = PBXGroup;
 			children = (
-				E2FB03E11BD7782400B281A5 /* AudioHelper.swift */,
 				E2EBF1981BD8B7B1000C66C1 /* RecordAudioHelper.swift */,
 				E2EBF19A1BD8BBD6000C66C1 /* PlayAudioHelper.swift */,
 				E2C2A35E1BDF5D0300100394 /* AudioEngineHelper.swift */,
@@ -230,7 +227,6 @@
 				E2EBF1991BD8B7B1000C66C1 /* RecordAudioHelper.swift in Sources */,
 				E299702B1BD6AFF400F679B1 /* PlaySoundsViewController.swift in Sources */,
 				E2EBF19E1BD8C036000C66C1 /* PitchPerfectModel.swift in Sources */,
-				E2FB03E21BD7782400B281A5 /* AudioHelper.swift in Sources */,
 				E2E50FDA1BD6289800FDCD31 /* AppDelegate.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;

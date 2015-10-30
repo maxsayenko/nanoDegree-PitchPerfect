@@ -112,7 +112,7 @@ class AudioEngineHelper: NSObject, AVAudioPlayerDelegate {
     private func outputAudio(playerNode: AVAudioPlayerNode) {
         // Scheduling file to play. Had to convert it to buffer as in 'scheduleFile' function completionHandler didn't fire correctly
         do {
-            // Converting file to buffer
+            // Converting file to buffer. Have to keep it in separate variable for other playbacks
             let file: AVAudioFile = try AVAudioFile(forReading: audioFile.url)
             let buffer = AVAudioPCMBuffer(PCMFormat: file.processingFormat, frameCapacity: UInt32(file.length))
             try file.readIntoBuffer(buffer)
