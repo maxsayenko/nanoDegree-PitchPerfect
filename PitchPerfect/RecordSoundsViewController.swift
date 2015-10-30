@@ -10,13 +10,13 @@ import UIKit
 import AVFoundation
 
 class RecordSoundsViewController: UIViewController, AVAudioRecorderDelegate, AVAudioPlayerDelegate {
-    let textRecording = "Recording!"
+    let textRecording = "Recording! Tap to Pause."
     let textRecord = "Tap to record!"
     let textResume = "Resume!"
     var recordState: RecordState = .Stopped
     
     let recorder = RecordAudioHelper()
-    let pitchPerfectModel = PitchPerfectModel()
+    var pitchPerfectModel: PitchPerfectModel? = nil
     
     @IBOutlet var recordLabel: UILabel!
     @IBOutlet var recordButton: UIButton!
@@ -45,7 +45,7 @@ class RecordSoundsViewController: UIViewController, AVAudioRecorderDelegate, AVA
     
     func doneRecordingCallback(url: NSURL) -> Void {
         print("doneRecordingCallback = \(url)")
-        pitchPerfectModel.audioUrl = url
+        pitchPerfectModel = PitchPerfectModel(audioUrl: url)
         self.performSegueWithIdentifier("showPlaySoundsView", sender: self)
     }
     

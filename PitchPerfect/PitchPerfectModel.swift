@@ -10,4 +10,7 @@ import Foundation
 
 class PitchPerfectModel {
     var audioUrl: NSURL?
+    init(audioUrl: NSURL) {
+        self.audioUrl = audioUrl
+    }
 }
